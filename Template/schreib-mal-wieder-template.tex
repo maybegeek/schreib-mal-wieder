@@ -1,0 +1,784 @@
+\documentclass[fontsize=12pt,DIV10,paper=a4,twoside=false]{scrartcl}
+
+\usepackage{xunicode,listings,leading}
+
+\usepackage{polyglossia}
+\setdefaultlanguage[spelling=new]{german}
+
+\setmainlanguage[babelshorthands=false]{german}
+%\usepackage[autostyle,german=guillemets]{csquotes}
+\usepackage[autostyle,german=quotes]{csquotes}
+\MakeOuterQuote{"}
+
+
+\usepackage{lscape}
+\usepackage{dashbox}
+\usepackage{rotating}
+\usepackage{xcolor}
+\usepackage{realboxes}
+\usepackage{dashrule}
+\usepackage{etoolbox}
+\usepackage{adjustbox}
+\usepackage{comment}
+\usepackage{shapepar}
+\usepackage[absolute]{textpos}
+\usepackage{intcalc}
+\usepackage{xstring}
+\usepackage{forloop}
+\usepackage{xltxtra}
+\usepackage{ifxetex}
+\usepackage{fixltx2e}
+
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+
+\setmainfont[%
+  RawFeature=+calt,%disable Q.long + contextual alternatives
+  Path=./Template/Fonts/EBGaramond/otf/,%
+  UprightFont=EBGaramond08-Regular.otf,%
+  BoldFont=EBGaramond08-Regular.otf,%
+  BoldFeatures={FakeBold=1.8},%
+  ItalicFont=EBGaramond08-Italic.otf,%
+  BoldItalicFont=EBGaramond08-Italic.otf,%
+  BoldItalicFeatures={FakeBold=1.8},%
+  SmallCapsFont=EBGaramondSC08-Regular.otf%
+]{EBGaramond}
+
+\setsansfont[%
+  RawFeature=+calt,%disable Q.long + contextual alternatives 
+  Path=./Template/Fonts/EBGaramond/otf/,%
+  UprightFont=EBGaramond08-Regular.otf,%
+  BoldFont=EBGaramond08-Regular.otf,%
+  BoldFeatures={FakeBold=1.8},%
+  ItalicFont=EBGaramond08-Italic.otf,%
+  BoldItalicFont=EBGaramond08-Italic.otf,%
+  BoldItalicFeatures={FakeBold=1.8},%
+  SmallCapsFont=EBGaramondSC08-Regular.otf%
+]{EBGaramond}
+
+%\setsansfont[%
+%  Path=Template/Fonts/FiraSans/,%
+%  UprightFont=*-Regular,%
+%  ItalicFont=*-Italic,%
+%  BoldFont=*-Bold,%
+%  BoldItalicFont=*-BoldItalic%
+%]{FiraSans}
+
+\setmonofont[%
+  Path=Template/Fonts/FiraMono/,%
+  UprightFont=*-Regular,%
+  BoldFont=*-Bold,%
+  Mapping=tex-ansi,
+]{FiraMono}
+
+%\setmonofont[Mapping=tex-ansi]{Droid Sans Mono}
+
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath}
+
+\begin{comment}
+Standardbegleittext Rückseite links unten
+\end{comment}
+\newcommand{\pstZusatzA}{}
+\newcommand{\pstZusatzB}{}
+\newcommand{\pstTitel}{Postkartenspielerei mit Worten}
+\newcommand{\pstVonAutor}{$if(PstVonAutor)$$PstVonAutor$$else$maybegeek$endif$}
+\newcommand{\pstAnName}{$if(PstAnName)$$PstAnName$$else$Hans Dampf$endif$}
+\newcommand{\pstAnStrasse}{$if(PstAnStrasse)$$PstAnStrasse$$else$Musterweg 17$endif$}
+\newcommand{\pstAnOrt}{$if(PstAnOrt)$$PstAnOrt$$else$12345 Dinghausen$endif$}
+\newcommand{\pstAnLand}{$if(PstAnLand)$$PstAnLand$$else$Dingsland$endif$}
+\newcommand{\pstText}{$if(PstText)$$PstText$$else$PstText: Wird wiederholt und abgeschnitten bei ca 1900 Zeichen.$endif$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\pstMaxDiv}{}
+
+\newcommand\pstZeichenDings[1]{%
+  \StrLen{#1}[\pstZeichenCounter]%
+  \renewcommand{\pstMaxDiv}{\intcalcAdd{\intcalcDiv{2200}{\pstZeichenCounter}}{2}}
+  %\renewcommand{\pstMaxDiv}{\intcalcDiv{2200}{\pstZeichenCounter}}
+}
+\pstZeichenDings{\pstText}
+\newcommand\pstDerText{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\input{Shapes/lantern.shape}
+\newcommand{\pstFormatHoch}{\lanternpar{\fontsize{6}{7}\selectfont\pstDerText}}
+\newcommand{\pstFormatBreit}{\lanternpar{\fontsize{6}{7}\selectfont\pstDerText}}
+\newcommand{\pstFormatHochFarbe}{\lanternpar{\fontsize{6}{7}\selectfont\textcolor{weiss}\pstDerText}}
+\newcommand{\pstFormatBreitFarbe}{\lanternpar{\fontsize{6}{7}\selectfont\textcolor{weiss}\pstDerText}}
+\renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$happy ...$endif$}
+\renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$der klassische runde Rübengeist :) $endif$}
+
+
+
+\newcommand{\pstBriefFont}{EB Garamond}
+\newcommand{\pstFont}{EB Garamond}
+\newcommand{\pstFontNeu}{EB Garamond}
+\newcommand{\pstFontNull}{EB Garamond}
+
+
+\newcommand{\laaber}{}
+
+
+\title{\pstTitel}
+\author{\pstVonAutor}
+
+\newcounter{ct}%
+\forloop{ct}{1}{\value{ct} < \pstMaxDiv}%
+{ \appto\pstDerText{\pstText~} }
+
+\StrLeft{\pstDerText}{1900}[\pstDerText]
+
+\begin{document}
+%
+\definecolor{farbb}{RGB}{139,137,137}
+\definecolor{rott}{HTML}{990000}
+\definecolor{weiss}{HTML}{FFF4BF}
+%
+\begin{comment}
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+faltbar transparent lang
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+\end{comment}
+
+\clearpage
+\newpage
+\thispagestyle{empty}
+\TPshowboxesfalse
+\TPboxrulesize = 0 mm
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\begin{textblock}{140}(35,35)
+\adjustbox{cframe=farbb 0.1mm,minipage=[c][14cm][c]{9.5cm},Trim=0 0 0 3.5mm,padding=0,margin=0,angle=90}{
+\begin{center}
+
+\parbox{20mm}{\fontsize{12}{12}\selectfont \centering {\fontspec{\pstFont}}}
+\pstFormatHoch
+\relax
+
+\end{center}
+}
+\end{textblock}
+
+\null
+
+\begin{textblock}{140}(35,130)
+\adjustbox{cframe=farbb 0.1mm,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
+
+\ifdefempty{\pstAnName}{\relax}{\begin{textblock*}{50mm}(112mm,180mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnName}
+\end{textblock*}}
+
+\ifdefempty{\pstAnStrasse}{\relax}{\begin{textblock*}{50mm}(112mm,187mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnStrasse}
+\end{textblock*}}
+
+\ifdefempty{\pstAnOrt}{\relax}{\begin{textblock*}{50mm}(112mm,194mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnOrt}
+\end{textblock*}}
+
+\ifdefempty{\pstAnLand}{\relax}{\begin{textblock*}{50mm}(112mm,201mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnLand}
+\end{textblock*}}
+
+
+\TPshowboxestrue
+\TPboxrulesize = 0.1 mm
+\textblockrulecolour{farbb}
+\begin{textblock*}{15mm}(150mm,140mm) 
+\hfill
+\vspace{18mm}
+\end{textblock*}
+
+\TPshowboxesfalse
+\begin{textblock*}{130mm}(40mm,217mm) 
+\fontsize{6}{6}\selectfont{\pstZusatzA}
+\end{textblock*}
+
+\begin{textblock*}{130mm}(40mm,220mm) 
+\fontsize{6}{6}\selectfont{\pstZusatzB}
+\end{textblock*}
+
+\begin{textblock*}{80mm}(108mm,143mm) 
+\begin{turn}{270}
+{{\color{farbb}\hdashrule{70mm}{0.2mm}{0.8mm}}}
+\end{turn}
+\end{textblock*}
+
+\textblockcolour{}
+
+\hfill
+}
+\end{textblock}
+
+\textblockcolour{white}
+\begin{textblock*}{148mm}(29.7mm,129.5mm)
+\vspace{0.4mm}\color{farbb}\hdashrule{145mm}{0.2mm}{0.8mm}\vspace{0.4mm}
+\end{textblock*}
+
+
+\begin{comment}
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+faltbar transparent breit
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+\end{comment}
+\clearpage
+\newpage
+\thispagestyle{empty}
+\TPshowboxesfalse
+\begin{textblock}{140}(35,35)
+\adjustbox{cframe=farbb 0.1mm,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
+\begin{center}
+
+\parbox{20mm}{\fontsize{12}{12}\selectfont \centering {\fontspec{\pstFont}}}
+\pstFormatBreit
+\relax
+
+\end{center}
+}
+\end{textblock}
+
+\null
+
+\begin{textblock}{140}(35,130)
+\adjustbox{cframe=farbb 0.1mm,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
+
+
+\ifdefempty{\pstAnName}{\relax}{\begin{textblock*}{50mm}(112mm,180mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnName}
+\end{textblock*}}
+
+\ifdefempty{\pstAnStrasse}{\relax}{\begin{textblock*}{50mm}(112mm,187mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnStrasse}
+\end{textblock*}}
+
+\ifdefempty{\pstAnOrt}{\relax}{\begin{textblock*}{50mm}(112mm,194mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnOrt}
+\end{textblock*}}
+
+\ifdefempty{\pstAnLand}{\relax}{\begin{textblock*}{50mm}(112mm,201mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnLand}
+\end{textblock*}}
+
+\TPshowboxestrue
+\TPboxrulesize = 0.1 mm
+\textblockrulecolour{farbb}
+\begin{textblock*}{15mm}(150mm,140mm) 
+\hfill
+\vspace{18mm}
+\end{textblock*}
+
+\TPshowboxesfalse
+\begin{textblock*}{130mm}(40mm,217mm) 
+\fontsize{6}{6}\selectfont{\pstZusatzA}
+\end{textblock*}
+
+\begin{textblock*}{130mm}(40mm,220mm) 
+\fontsize{6}{6}\selectfont{\pstZusatzB}
+\end{textblock*}
+
+\begin{textblock*}{80mm}(108mm,143mm) 
+\begin{turn}{270}
+{{\color{farbb}\hdashrule{70mm}{0.2mm}{0.8mm}}}
+\end{turn}
+\end{textblock*}
+
+\textblockcolour{}
+
+\hfill
+}
+\end{textblock}
+
+\textblockcolour{white}
+\begin{textblock*}{148mm}(29.7mm,129.5mm)
+\vspace{0.4mm}\color{farbb}\hdashrule{145mm}{0.2mm}{0.8mm}\vspace{0.4mm}
+\end{textblock*}
+
+
+\begin{comment}
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+faltbar rot lang
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+\end{comment}
+\clearpage
+\newpage
+\thispagestyle{empty}
+\TPshowboxesfalse
+\TPboxrulesize = 0 mm
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\begin{textblock}{140}(35,35)
+\adjustbox{bgcolor=rott,cframe=rott 0.1mm,minipage=[c][140mm][c]{9.5cm},Trim=0 0 0 3.5mm,padding=0,margin=0,angle=90}{
+\begin{center}
+
+\parbox{20mm}{\fontsize{12}{12}\selectfont \centering \textcolor{weiss}{\fontspec{\pstFont}}}
+\pstFormatHochFarbe
+\relax
+
+
+\end{center}
+}
+\end{textblock}
+
+\null
+
+\begin{textblock}{140}(35,130)
+\adjustbox{cframe=farbb 0.1mm,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
+
+\ifdefempty{\pstAnName}{\relax}{\begin{textblock*}{50mm}(112mm,180mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnName}
+\end{textblock*}}
+
+\ifdefempty{\pstAnStrasse}{\relax}{\begin{textblock*}{50mm}(112mm,187mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnStrasse}
+\end{textblock*}}
+
+\ifdefempty{\pstAnOrt}{\relax}{\begin{textblock*}{50mm}(112mm,194mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnOrt}
+\end{textblock*}}
+
+\ifdefempty{\pstAnLand}{\relax}{\begin{textblock*}{50mm}(112mm,201mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnLand}
+\end{textblock*}}
+
+\TPshowboxestrue
+\TPboxrulesize = 0.1 mm
+\textblockrulecolour{farbb}
+\begin{textblock*}{15mm}(150mm,140mm) 
+\hfill
+\vspace{18mm}
+\end{textblock*}
+
+\TPshowboxesfalse
+\begin{textblock*}{130mm}(40mm,217mm) 
+\fontsize{6}{6}\selectfont{\pstZusatzA}
+\end{textblock*}
+
+\begin{textblock*}{130mm}(40mm,220mm) 
+\fontsize{6}{6}\selectfont{\pstZusatzB}
+\end{textblock*}
+
+\begin{textblock*}{80mm}(108mm,143mm) 
+\begin{turn}{270}
+{{\color{farbb}\hdashrule{70mm}{0.2mm}{0.8mm}}}
+\end{turn}
+\end{textblock*}
+
+\textblockcolour{}
+
+\hfill
+}
+\end{textblock}
+
+
+\begin{comment}
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+faltbar rot breit
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+\end{comment}
+\clearpage
+\newpage
+\thispagestyle{empty}
+\TPshowboxesfalse
+\TPboxrulesize = 0 mm
+\begin{textblock}{140}(35,35)
+\adjustbox{bgcolor=rott,cframe=rott 0.1mm,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
+\begin{center}
+
+
+\parbox{20mm}{\fontsize{12}{12}\selectfont \centering \textcolor{weiss}{\fontspec{\pstFont}}}
+\pstFormatBreitFarbe
+\relax
+
+\end{center}
+}
+\end{textblock}
+
+\null
+
+\begin{textblock}{140}(35,130)
+\adjustbox{cframe=farbb 0.1mm,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
+
+\ifdefempty{\pstAnName}{\relax}{\begin{textblock*}{50mm}(112mm,180mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnName}
+\end{textblock*}}
+
+\ifdefempty{\pstAnStrasse}{\relax}{\begin{textblock*}{50mm}(112mm,187mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnStrasse}
+\end{textblock*}}
+
+\ifdefempty{\pstAnOrt}{\relax}{\begin{textblock*}{50mm}(112mm,194mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnOrt}
+\end{textblock*}}
+
+\ifdefempty{\pstAnLand}{\relax}{\begin{textblock*}{50mm}(112mm,201mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnLand}
+\end{textblock*}}
+
+\TPshowboxestrue
+\TPboxrulesize = 0.1 mm
+\textblockrulecolour{farbb}
+\begin{textblock*}{15mm}(150mm,140mm) 
+\hfill
+\vspace{18mm}
+\end{textblock*}
+
+\TPshowboxesfalse
+\begin{textblock*}{130mm}(40mm,217mm) 
+\fontsize{6}{6}\selectfont{\pstZusatzA}
+\end{textblock*}
+
+\begin{textblock*}{130mm}(40mm,220mm) 
+\fontsize{6}{6}\selectfont{\pstZusatzB}
+\end{textblock*}
+
+\begin{textblock*}{80mm}(108mm,143mm) 
+\begin{turn}{270}
+{{\color{farbb}\hdashrule{70mm}{0.2mm}{0.8mm}}}
+\end{turn}
+\end{textblock*}
+
+\textblockcolour{}
+
+\hfill
+}
+\end{textblock}
+
+
+\begin{comment}
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+Was kann ich damit machen ?
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+
+\clearpage
+\newpage
+\thispagestyle{empty}
+
+\section{Erklärung}
+
+\end{comment}
+
+
+\begin{comment}
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+Duplex transparent vorn
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+\end{comment}
+\clearpage
+\newpage
+\thispagestyle{empty}
+\TPshowboxesfalse
+\TPboxrulesize = 0 mm
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\begin{textblock}{140}(35,35)
+\adjustbox{frame=0.1mm,minipage=[c][14cm][c]{9.5cm},Trim=0 0 0 3.5mm,padding=0,margin=0,angle=90}{
+\begin{center}
+
+\parbox{20mm}{\fontsize{12}{12}\selectfont \centering {\fontspec{\pstFont}}}
+\pstFormatHoch
+\relax
+
+
+
+\end{center}
+}
+\end{textblock}
+
+\null
+
+\begin{textblock}{140}(35,150)
+\adjustbox{frame,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
+\begin{center}
+
+\parbox{20mm}{\fontsize{12}{12}\selectfont \centering {\fontspec{\pstFont}}}
+\pstFormatBreit
+\relax
+
+
+\end{center}
+}
+\end{textblock}
+
+
+\begin{comment}
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+Duplex transparent hinten
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+\end{comment}
+\clearpage
+\newpage
+\thispagestyle{empty}
+\TPshowboxesfalse
+\TPboxrulesize = 0 mm
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\begin{textblock}{140}(35,35)
+\adjustbox{frame=0.1mm,minipage=[c][14cm][c]{9.5cm},Trim=0 0 0 3.5mm,padding=0,margin=0,angle=90}{
+
+\ifdefempty{\pstAnName}{\relax}{\begin{textblock*}{50mm}(112mm,85mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnName}
+\end{textblock*}}
+
+\ifdefempty{\pstAnStrasse}{\relax}{\begin{textblock*}{50mm}(112mm,92mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnStrasse}
+\end{textblock*}}
+
+\ifdefempty{\pstAnOrt}{\relax}{\begin{textblock*}{50mm}(112mm,99mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnOrt}
+\end{textblock*}}
+
+\ifdefempty{\pstAnLand}{\relax}{\begin{textblock*}{50mm}(112mm,106mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnLand}
+\end{textblock*}}
+
+\TPshowboxestrue
+\TPboxrulesize = 0.2 mm
+\textblockrulecolour{farbb}
+\begin{textblock*}{15mm}(150mm,45mm) 
+\hfill
+\vspace{18mm}
+\end{textblock*}
+
+\TPshowboxesfalse
+\begin{textblock*}{130mm}(40mm,122mm) 
+\fontsize{6}{6}\selectfont{\pstZusatzA}
+\end{textblock*}
+
+\begin{textblock*}{130mm}(40mm,125mm) 
+\fontsize{6}{6}\selectfont{\pstZusatzB}
+\end{textblock*}
+
+\begin{textblock*}{80mm}(108mm,48mm) 
+\begin{turn}{270}
+{{\color{farbb}\hdashrule{70mm}{0.2mm}{0.8mm}}}
+\end{turn}
+\end{textblock*}
+
+\hfill
+}
+\end{textblock}
+
+\null
+
+\begin{textblock}{140}(35,150)
+\adjustbox{frame,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
+
+
+
+\ifdefempty{\pstAnName}{\relax}{\begin{textblock*}{50mm}(112mm,200mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnName}
+\end{textblock*}}
+
+\ifdefempty{\pstAnStrasse}{\relax}{\begin{textblock*}{50mm}(112mm,207mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnStrasse}
+\end{textblock*}}
+
+\ifdefempty{\pstAnOrt}{\relax}{\begin{textblock*}{50mm}(112mm,214mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnOrt}
+\end{textblock*}}
+
+\ifdefempty{\pstAnLand}{\relax}{\begin{textblock*}{50mm}(112mm,221mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnLand}
+\end{textblock*}}
+
+
+\TPshowboxestrue
+\TPboxrulesize = 0.2 mm
+\textblockrulecolour{farbb}
+\begin{textblock*}{15mm}(150mm,160mm) 
+\hfill
+\vspace{18mm}
+\end{textblock*}
+
+\TPshowboxesfalse
+\begin{textblock*}{130mm}(40mm,237mm) 
+\fontsize{6}{6}\selectfont{\pstZusatzA}
+\end{textblock*}
+
+\begin{textblock*}{130mm}(40mm,240mm) 
+\fontsize{6}{6}\selectfont{\pstZusatzB}
+\end{textblock*}
+
+\begin{textblock*}{80mm}(108mm,163mm) 
+\begin{turn}{270}
+{{\color{farbb}\hdashrule{70mm}{0.2mm}{0.8mm}}}
+\end{turn}
+\end{textblock*}
+
+\hfill
+}
+\end{textblock}
+
+
+
+\begin{comment}
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+Duplex rot vorn
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+\end{comment}
+\clearpage
+\newpage
+\thispagestyle{empty}
+\TPshowboxesfalse
+\TPboxrulesize = 0 mm
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\begin{textblock}{140}(35,35)
+\adjustbox{bgcolor=rott,minipage=[c][14cm][c]{9.5cm},Trim=0 0 0 3.5mm,padding=0,margin=0,angle=90}{
+\begin{center}
+
+\parbox{20mm}{\fontsize{12}{12}\selectfont \centering \textcolor{weiss}{\fontspec{\pstFont}}}
+\pstFormatHochFarbe
+\relax
+
+\end{center}
+}
+\end{textblock}
+
+\null
+
+\begin{textblock}{140}(35,150)
+\adjustbox{bgcolor=rott,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
+\begin{center}
+
+\parbox{20mm}{\fontsize{12}{12}\selectfont \centering \textcolor{weiss}{\fontspec{\pstFont}}}
+\pstFormatBreitFarbe
+\relax
+
+\end{center}
+}
+\end{textblock}
+
+
+\begin{comment}
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+Duplex rot hinten
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+\end{comment}
+\clearpage
+\newpage
+\thispagestyle{empty}
+\TPshowboxesfalse
+\TPboxrulesize = 0 mm
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\begin{textblock}{140}(35,35)
+\adjustbox{frame=0.1mm,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
+
+
+\ifdefempty{\pstAnName}{\relax}{\begin{textblock*}{50mm}(112mm,85mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnName}
+\end{textblock*}}
+
+\ifdefempty{\pstAnStrasse}{\relax}{\begin{textblock*}{50mm}(112mm,92mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnStrasse}
+\end{textblock*}}
+
+\ifdefempty{\pstAnOrt}{\relax}{\begin{textblock*}{50mm}(112mm,99mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnOrt}
+\end{textblock*}}
+
+\ifdefempty{\pstAnLand}{\relax}{\begin{textblock*}{50mm}(112mm,106mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnLand}
+\end{textblock*}}
+
+\TPshowboxestrue
+\TPboxrulesize = 0.2 mm
+\textblockrulecolour{farbb}
+\begin{textblock*}{15mm}(150mm,45mm) 
+\hfill
+\vspace{18mm}
+\end{textblock*}
+
+\TPshowboxesfalse
+\begin{textblock*}{130mm}(40mm,122mm) 
+\fontsize{6}{6}\selectfont{\pstZusatzA}
+\end{textblock*}
+
+\begin{textblock*}{130mm}(40mm,125mm) 
+\fontsize{6}{6}\selectfont{\pstZusatzB}
+\end{textblock*}
+
+\begin{textblock*}{80mm}(108mm,48mm) 
+\begin{turn}{270}
+{{\color{farbb}\hdashrule{70mm}{0.2mm}{0.8mm}}}
+\end{turn}
+\end{textblock*}
+
+\hfill
+}
+\end{textblock}
+
+\null
+
+\begin{textblock}{140}(35,150)
+\adjustbox{frame=0.1mm,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
+
+\ifdefempty{\pstAnName}{\relax}{\begin{textblock*}{50mm}(112mm,200mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnName}
+\end{textblock*}}
+
+\ifdefempty{\pstAnStrasse}{\relax}{\begin{textblock*}{50mm}(112mm,207mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnStrasse}
+\end{textblock*}}
+
+\ifdefempty{\pstAnOrt}{\relax}{\begin{textblock*}{50mm}(112mm,214mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnOrt}
+\end{textblock*}}
+
+\ifdefempty{\pstAnLand}{\relax}{\begin{textblock*}{50mm}(112mm,221mm) 
+\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnLand}
+\end{textblock*}}
+
+
+\TPshowboxestrue
+\TPboxrulesize = 0.2 mm
+\textblockrulecolour{farbb}
+\begin{textblock*}{15mm}(150mm,160mm) 
+\hfill
+\vspace{18mm}
+\end{textblock*}
+
+\TPshowboxesfalse
+\begin{textblock*}{130mm}(40mm,237mm) 
+\fontsize{6}{6}\selectfont{\pstZusatzA}
+\end{textblock*}
+
+\begin{textblock*}{130mm}(40mm,240mm) 
+\fontsize{6}{6}\selectfont{\pstZusatzB}
+\end{textblock*}
+
+\begin{textblock*}{80mm}(108mm,163mm) 
+\begin{turn}{270}
+{{\color{farbb}\hdashrule{70mm}{0.2mm}{0.8mm}}}
+\end{turn}
+\end{textblock*}
+
+\hfill
+}
+\end{textblock}
+
+\end{document}
+
