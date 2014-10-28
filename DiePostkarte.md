@@ -13,7 +13,7 @@ PstZusatzA: Hier ein wenig Text
 PstZusatzB: Hier nochmal was
 # Die Formen für den Text
 # {lantern|catandbat|movember|glider|umbrella|hand|herz|power}
-PstFigur: lantern
+PstFigur: hand
 # Autor des Briefs: "Vorname Nachname"
 PstVonAutor: Hans Dampf
 # Hier kommt der Text hin: "Bla Laaber, Bla Laaber, Bla Laaber."

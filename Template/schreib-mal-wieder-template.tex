@@ -28,6 +28,7 @@
 \usepackage{xltxtra}
 \usepackage{ifxetex}
 \usepackage{fixltx2e}
+\usepackage{ifthen}
 
 \usepackage{fontspec}
 \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
@@ -101,9 +102,9 @@ Standardbegleittext Rückseite links unten
 \newcommand\pstDerText{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newcommand{\PstFigur}{$if(PstFigur)$$PstFigur$$else$none$endif$}
 
-
-
+\ifthenelse{\equal{\PstFigur}{lantern}}{
 \input{Shapes/lantern.shape}
 \newcommand{\pstFormatHoch}{\lanternpar{\fontsize{6}{7}\selectfont\pstDerText}}
 \newcommand{\pstFormatBreit}{\lanternpar{\fontsize{6}{7}\selectfont\pstDerText}}
@@ -111,8 +112,79 @@ Standardbegleittext Rückseite links unten
 \newcommand{\pstFormatBreitFarbe}{\lanternpar{\fontsize{6}{7}\selectfont\textcolor{weiss}\pstDerText}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$happy ...$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$der klassische runde Rübengeist :) $endif$}
+}{}
 
+\ifthenelse{\equal{\PstFigur}{catandbat}}{
+\input{Shapes/cat.shape}
+\input{Shapes/bat.shape}
+\newcommand{\pstFormatHoch}{\catpar{\fontsize{6}{7}\selectfont\pstDerText}}
+\newcommand{\pstFormatBreit}{\batpar{\fontsize{4}{5}\selectfont\pstDerText}}
+\newcommand{\pstFormatHochFarbe}{\catpar{\fontsize{6}{7}\selectfont\textcolor{weiss}\pstDerText}}
+\newcommand{\pstFormatBreitFarbe}{\batpar{\fontsize{4}{5}\selectfont\textcolor{weiss}\pstDerText}}
+\renewcommand{\pstZusatzA}{a}
+\renewcommand{\pstZusatzB}{b}
+}{}
 
+\ifthenelse{\equal{\PstFigur}{movember}}{
+\input{Shapes/movember.shape}
+\input{Shapes/mov.shape}
+\newcommand{\pstFormatHoch}{\movpar{\fontsize{5}{6}\selectfont\pstDerText}}
+\newcommand{\pstFormatBreit}{\movemberpar{\fontsize{5}{6}\selectfont\pstDerText}}
+\newcommand{\pstFormatHochFarbe}{\movpar{\fontsize{5}{6}\selectfont\textcolor{weiss}\pstDerText}}
+\newcommand{\pstFormatBreitFarbe}{\movemberpar{\fontsize{5}{6}\selectfont\textcolor{weiss}\pstDerText}}
+\renewcommand{\pstZusatzA}{Mo Sis \& Mo Bro, Movember is coming!}
+\renewcommand{\pstZusatzB}{http://movember.com}
+}{}
+
+\ifthenelse{\equal{\PstFigur}{glider}}{
+\input{Shapes/gliderrund.shape}
+\input{Shapes/glidereckig.shape}
+\newcommand{\pstFormatHoch}{\glidereckigpar{\fontsize{5}{6}\selectfont\pstDerText}}
+\newcommand{\pstFormatBreit}{\gliderrundpar{\fontsize{4}{5}\selectfont\pstDerText}}
+\newcommand{\pstFormatHochFarbe}{\glidereckigpar{\fontsize{5}{6}\selectfont\textcolor{weiss}\pstDerText}}
+\newcommand{\pstFormatBreitFarbe}{\gliderrundpar{\fontsize{4}{5}\selectfont\textcolor{weiss}\pstDerText}}
+\renewcommand{\pstZusatzA}{the blue one!!}
+\renewcommand{\pstZusatzB}{http://....com}
+}{}
+
+\ifthenelse{\equal{\PstFigur}{umbrella}}{
+\input{Shapes/umbrella.shape}
+\newcommand{\pstFormatHoch}{\umbrellapar{\fontsize{4}{5}\selectfont\pstDerText}}
+\newcommand{\pstFormatBreit}{\umbrellapar{\fontsize{5}{6}\selectfont\pstDerText}}
+\newcommand{\pstFormatHochFarbe}{\umbrellapar{\fontsize{4}{5}\selectfont\textcolor{weiss}\pstDerText}}
+\newcommand{\pstFormatBreitFarbe}{\umbrellapar{\fontsize{5}{6}\selectfont\textcolor{weiss}\pstDerText}}
+\renewcommand{\pstZusatzA}{Schirm}
+\renewcommand{\pstZusatzB}{... weil pfuiwetter}
+}{}
+
+\ifthenelse{\equal{\PstFigur}{hand}}{
+\input{Shapes/zombiehand.shape}
+\newcommand{\pstFormatHoch}{\zombiehandpar{\fontsize{5}{6}\selectfont\pstDerText}}
+\newcommand{\pstFormatBreit}{\zombiehandpar{\fontsize{4}{5}\selectfont\pstDerText}}
+\newcommand{\pstFormatHochFarbe}{\zombiehandpar{\fontsize{5}{6}\selectfont\textcolor{weiss}\pstDerText}}
+\newcommand{\pstFormatBreitFarbe}{\zombiehandpar{\fontsize{4}{5}\selectfont\textcolor{weiss}\pstDerText}}
+\renewcommand{\pstZusatzA}{walkers, sleepers, ...}
+\renewcommand{\pstZusatzB}{}
+}{}
+
+\ifthenelse{\equal{\PstFigur}{herz}}{
+\newcommand{\pstFormatHoch}{\heartpar{\fontsize{5}{6}\selectfont\pstDerText}}
+\newcommand{\pstFormatBreit}{\heartpar{\fontsize{4}{5}\selectfont\pstDerText}}
+\newcommand{\pstFormatHochFarbe}{\heartpar{\fontsize{5}{6}\selectfont\textcolor{weiss}\pstDerText}}
+\newcommand{\pstFormatBreitFarbe}{\heartpar{\fontsize{4}{5}\selectfont\textcolor{weiss}\pstDerText}}
+\renewcommand{\pstZusatzA}{bis zum Himmel ...}
+\renewcommand{\pstZusatzB}{und wieder zurück.}
+}{}
+
+\ifthenelse{\equal{\PstFigur}{power}}{
+\input{Shapes/power.shape}
+\newcommand{\pstFormatHoch}{\powerpar{\fontsize{5}{6}\selectfont\pstDerText}}
+\newcommand{\pstFormatBreit}{\powerpar{\fontsize{4}{5}\selectfont\pstDerText}}
+\newcommand{\pstFormatHochFarbe}{\powerpar{\fontsize{5}{6}\selectfont\textcolor{weiss}\pstDerText}}
+\newcommand{\pstFormatBreitFarbe}{\powerpar{\fontsize{4}{5}\selectfont\textcolor{weiss}\pstDerText}}
+\renewcommand{\pstZusatzA}{geek}
+\renewcommand{\pstZusatzB}{...}
+}{}
 
 \newcommand{\pstBriefFont}{EB Garamond}
 \newcommand{\pstFont}{EB Garamond}
