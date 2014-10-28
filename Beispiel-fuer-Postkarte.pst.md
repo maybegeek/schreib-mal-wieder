@@ -12,8 +12,8 @@ PstZusatzA: Hier ein wenig Text
 # Zusatzzeile 2, hinten unten links: "Dinge und Sachen"
 PstZusatzB: Hier nochmal was
 # Die Formen für den Text
-# {lantern|catandbat|movember|glider|umbrella|hand|herz|power}
-PstFigur: herz
+# {lantern|catandbat|movember|glider|umbrella|hand|herz|power|urkugel}
+PstFigur: urkugel
 # Autor des Briefs: "Vorname Nachname"
 PstVonAutor: Hans Dampf
 # Hier kommt der Text hin: "Bla Laaber, Bla Laaber, Bla Laaber."
