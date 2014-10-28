@@ -1,7 +1,7 @@
 schreib-mal-wieder
 ==================
 
-postcards for special occasion: Akzidenz und so : )
+postcards for special occasions -- Akzidenz und so :)
 
 
 # Voraussetzungen
