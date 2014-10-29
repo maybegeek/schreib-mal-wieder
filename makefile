@@ -14,6 +14,7 @@ POSTKARTE_HAND  := $(patsubst %.pst.md,$(O_DIR)/%.hand.pdf,$(URMD))
 POSTKARTE_HERZ  := $(patsubst %.pst.md,$(O_DIR)/%.herz.pdf,$(URMD))
 POSTKARTE_POWR  := $(patsubst %.pst.md,$(O_DIR)/%.power.pdf,$(URMD))
 POSTKARTE_URKU  := $(patsubst %.pst.md,$(O_DIR)/%.urkugel.pdf,$(URMD))
+POSTKARTE_URLA  := $(patsubst %.pst.md,$(O_DIR)/%.urlantern.pdf,$(URMD))
 
 all : $(POSTKARTE)
 
@@ -26,7 +27,8 @@ postkarten-alle : \
 	$(POSTKARTE_HAND) \
 	$(POSTKARTE_HERZ) \
 	$(POSTKARTE_POWR) \
-	$(POSTKARTE_URKU)
+	$(POSTKARTE_URKU) \
+	$(POSTKARTE_URLA)
 	
   
 ## POSTKARTE
@@ -98,6 +100,13 @@ $(O_DIR)/%.urkugel.pdf: %.pst.md
 	-VPstFigur=urkugel \
 	$< -o $@
 
+## POSTKARTE_URLA
+$(O_DIR)/%.urlantern.pdf: %.pst.md
+	@pandoc $(PST_OPT) \
+	--template=$(PST_TMPL) \
+	-VPstFigur=urlantern \
+	$< -o $@
+
 clean : ;
 	@-rm \
 	$(POSTKARTE)
@@ -113,6 +122,7 @@ clean-all : ;
 	$(POSTKARTE_HAND) \
 	$(POSTKARTE_HERZ) \
 	$(POSTKARTE_POWR) \
-	$(POSTKARTE_POWR)
+	$(POSTKARTE_URKU) \
+	$(POSTKARTE_URLA)
 
 rebuild-all : clean-all all
