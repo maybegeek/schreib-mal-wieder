@@ -19,6 +19,8 @@ PstVonAutor: Hans Dampf
 # Hier kommt der Text hin: Bla Laaber, Bla Laaber, Bla Laaber.
 # Wird wiederholt und abgeschnitten bei ca 1900 Zeichen.
 PstText: Hier ist die eigentliche Quelle der Buchstaben für unsere Figuren; viel Vergnügen beim kreativen Basteln.
+# Spracheinstellung
+PstLang:
 # Drucker. In einer perfekten Welt, aber nun ja ...
 # Korrektur der Rückseite beim Duplexdruck in mm. Der Bezugspunkt (obere linke Ecke)
 # wird damit verschoben. Beispiel: Rückseite soll a bisserl nach rechts verschoben werden,
