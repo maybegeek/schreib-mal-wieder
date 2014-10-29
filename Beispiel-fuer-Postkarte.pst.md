@@ -20,6 +20,8 @@ PstVonAutor: Hans Dampf
 # Wird wiederholt und abgeschnitten bei ca 1900 Zeichen.
 PstText: Hier ist die eigentliche Quelle der Buchstaben für unsere Figuren; viel Vergnügen beim kreativen Basteln.
 # Drucker. In einer perfekten Welt, aber nun ja ...
-# {rzdrfarbe|}
-PstDrucker: rzdrfarbe
+# Korrektur der Rückseite beim Duplexdruck in mm. Der Bezugspunkt (obere linke Ecke) wird damit verschoben
+# Beispiel: Rückseite soll a bisserl nach rechts verschoben werden, so 2 Millimeter = PstDuplexKorrX: 2
+PstDuplexKorrX:
+PstDuplexKorrY:
 ---

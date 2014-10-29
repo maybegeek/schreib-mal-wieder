@@ -536,7 +536,7 @@ faltbar rot breit
 \end{textblock}
 
 
-\begin{comment}
+
 ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
 ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
 Was kann ich damit machen ?
@@ -549,7 +549,9 @@ Was kann ich damit machen ?
 
 \section{Erklärung}
 
-\end{comment}
+Oben Falten und Kleben, jetzt Duplex-Druck mit Korrektur.
+
+
 
 
 \begin{comment}
@@ -566,6 +568,7 @@ Duplex transparent vorn
 \TPboxrulesize = 0 mm
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{0mm}{0mm}
 \begin{textblock}{140}(35,35)
 \adjustbox{frame=0.1mm,minipage=[c][14cm][c]{9.5cm},Trim=0 0 0 3.5mm,padding=0,margin=0,angle=90}{
 \begin{center}
@@ -610,6 +613,7 @@ Duplex transparent hinten
 \TPboxrulesize = 0 mm
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{0mm}{0mm}%pandoc
 \begin{textblock}{140}(35,35)
 \adjustbox{frame=0.1mm,minipage=[c][14cm][c]{9.5cm},Trim=0 0 0 3.5mm,padding=0,margin=0,angle=90}{
 
@@ -723,6 +727,7 @@ Duplex rot vorn
 \TPboxrulesize = 0 mm
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{0mm}{0mm}
 \begin{textblock}{140}(35,35)
 \adjustbox{bgcolor=rott,minipage=[c][14cm][c]{9.5cm},Trim=0 0 0 3.5mm,padding=0,margin=0,angle=90}{
 \begin{center}
@@ -764,6 +769,7 @@ Duplex rot hinten
 \TPboxrulesize = 0 mm
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{$if(PstDuplexKorrX)$$PstDuplexKorrX$mm$else$0mm$endif$}{$if(PstDuplexKorrY)$$PstDuplexKorrY$mm$else$0mm$endif$}
 \begin{textblock}{140}(35,35)
 \adjustbox{frame=0.1mm,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
 
