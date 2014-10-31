@@ -57,131 +57,131 @@ postkarten-alle : \
   
 ## POSTKARTE
 $(O_DIR)/%.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_NORMAL) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_NORMAL) \
 	$< -o $@
 
 ## POSTKARTE_D
 $(O_DIR)/%.duplex.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_DUPLEX) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_DUPLEX) \
 	$< -o $@
 
 ## POSTKARTE_LANT
 $(O_DIR)/%.lantern.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_NORMAL) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_NORMAL) \
 	-VPstFigur=lantern \
 	$< -o $@
 
 ## POSTKARTE_LANT_D
 $(O_DIR)/%.lantern.duplex.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_DUPLEX) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_DUPLEX) \
 	-VPstFigur=lantern \
 	$< -o $@
 
 ## POSTKARTE_CATN
 $(O_DIR)/%.cat-n-bat.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_NORMAL) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_NORMAL) \
 	-VPstFigur=catandbat \
 	$< -o $@
 
 ## POSTKARTE_CATN_D
 $(O_DIR)/%.cat-n-bat.duplex.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_DUPLEX) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_DUPLEX) \
 	-VPstFigur=catandbat \
 	$< -o $@
 
 ## POSTKARTE_MOVM
 $(O_DIR)/%.movember.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_NORMAL) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_NORMAL) \
 	-VPstFigur=movember \
 	$< -o $@
 
 ## POSTKARTE_MOVM_D
 $(O_DIR)/%.movember.duplex.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_DUPLEX) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_DUPLEX) \
 	-VPstFigur=movember \
 	$< -o $@
 
 ## POSTKARTE_GLID
 $(O_DIR)/%.glider.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_NORMAL) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_NORMAL) \
 	-VPstFigur=glider \
 	$< -o $@
 
 ## POSTKARTE_GLID_D
 $(O_DIR)/%.glider.duplex.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_DUPLEX) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_DUPLEX) \
 	-VPstFigur=glider \
 	$< -o $@
 
 ## POSTKARTE_UMBR
 $(O_DIR)/%.umbrella.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_NORMAL) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_NORMAL) \
 	-VPstFigur=umbrella \
 	$< -o $@
 
 ## POSTKARTE_UMBR_D
 $(O_DIR)/%.umbrella.duplex.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_DUPLEX) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_DUPLEX) \
 	-VPstFigur=umbrella \
 	$< -o $@
 
 ## POSTKARTE_HAND
 $(O_DIR)/%.hand.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_NORMAL) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_NORMAL) \
 	-VPstFigur=hand \
 	$< -o $@
 
 ## POSTKARTE_HAND_D
 $(O_DIR)/%.hand.duplex.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_DUPLEX) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_DUPLEX) \
 	-VPstFigur=hand \
 	$< -o $@
 
 ## POSTKARTE_HERZ
 $(O_DIR)/%.herz.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_NORMAL) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_NORMAL) \
 	-VPstFigur=herz \
 	$< -o $@
 
 ## POSTKARTE_HERZ_D
 $(O_DIR)/%.herz.duplex.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_DUPLEX) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_DUPLEX) \
 	-VPstFigur=herz \
 	$< -o $@
 
 ## POSTKARTE_POWR
 $(O_DIR)/%.power.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_NORMAL) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_NORMAL) \
 	-VPstFigur=power \
 	$< -o $@
 
 ## POSTKARTE_POWR_D
 $(O_DIR)/%.power.duplex.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_DUPLEX) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_DUPLEX) \
 	-VPstFigur=power \
 	$< -o $@
 
 ## POSTKARTE_URKU
 $(O_DIR)/%.urkugel.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_NORMAL) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_NORMAL) \
 	-VPstFigur=urkugel \
 	$< -o $@
 
 ## POSTKARTE_URKU_D
 $(O_DIR)/%.urkugel.duplex.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_DUPLEX) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_DUPLEX) \
 	-VPstFigur=urkugel \
 	$< -o $@
 
 ## POSTKARTE_URLA
 $(O_DIR)/%.urlantern.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_NORMAL) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_NORMAL) \
 	-VPstFigur=urlantern \
 	$< -o $@
 
 ## POSTKARTE_URLA_D
 $(O_DIR)/%.urlantern.duplex.pdf: %.pst.md
-	@pandoc $(PST_OPT) --template=$(PST_TMPL) --include-before-body=$(PST_DUPLEX) \
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_DUPLEX) \
 	-VPstFigur=urlantern \
 	$< -o $@
 
