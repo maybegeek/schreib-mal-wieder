@@ -1,7 +1,6 @@
-\documentclass[fontsize=12pt,DIV10,paper=a4,twoside=false]{scrartcl}
+\documentclass[fontsize=12pt,DIV=10,paper=a4,twoside=false]{scrartcl}
 
-\usepackage{xunicode,listings,leading}
-\usepackage{ifthen}
+\usepackage{xunicode}
 
 \usepackage{polyglossia}
 \setdefaultlanguage[spelling=new]{german}
@@ -11,13 +10,9 @@
 \MakeOuterQuote{"}
 $if(PstLang)$\setotherlanguage{$PstLang$}$else$$endif$
 
-\usepackage{lscape}
-\usepackage{dashbox}
 \usepackage{rotating}
 \usepackage{xcolor}
-\usepackage{realboxes}
 \usepackage{dashrule}
-\usepackage{etoolbox}
 \usepackage{adjustbox}
 \usepackage{comment}
 \usepackage{shapepar}
@@ -26,10 +21,8 @@ $if(PstLang)$\setotherlanguage{$PstLang$}$else$$endif$
 \usepackage{xstring}
 \usepackage{forloop}
 \usepackage{xltxtra}
-\usepackage{ifxetex}
 \usepackage{fixltx2e}
-
-
+\usepackage{ifthen}
 \usepackage{fontspec}
 \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
 
