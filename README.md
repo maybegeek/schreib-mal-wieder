@@ -18,11 +18,13 @@ Alles einfach in eine Datei namens ```Spezifischer-Titel.pst.md```. Darin gibt e
 
 # Befehlszeile
 
-```pandoc Irgendwas.pst.md --latex-engine=xelatex --no-tex-ligatures --template=Template/schreib-mal-wieder-template.tex -o Irgendwas.pst.pdf```
+```pandoc --standalone --latex-engine=xelatex --no-tex-ligatures -f markdown --template=Template/schreib-mal-wieder-template.tex -BTemplate/normal.tex InputName.pst.md -o OutputName.pdf```
+
+```pandoc --standalone --latex-engine=xelatex --no-tex-ligatures -f markdown --template=Template/schreib-mal-wieder-template.tex -BTemplate/duplex.tex InputName.pst.md -o OutputName.pdf```
 
 # Makefile
 
-Später sollte mit makefile das Ganze automatisiert werden. Ein Output-Ordner dient dann als Aufbewahrungsort für die PDF-Dateien (versehen mit Zeitstempel). Ob alle Figuren auf einmal erzeugt werden sollten ... ich denke eher nicht.
+Das makefile erstellt in der Nutzung ```make``` eine Umsetzung zum Falten und eine im Duplex-Druck. Zusätzlich können alle Figuren auf einmal erstellt werden durch den Aufruf: ```make postkarten-alle```. Ausgegeben werden die Dateien im Ordner ```Output```.
 
 # Adressat als Dateiname
 
