@@ -11,7 +11,7 @@ PstFigur: urlantern
 PstVonAutor:
 PstDuplexKorrX: 2
 PstDuplexKorrY:
-
+# 
 # Optionen
 # 
 # PstText:
@@ -53,4 +53,5 @@ PstDuplexKorrY:
 # Der Bezugspunkt (obere linke Ecke) wird damit verschoben.
 # Beispiel: Rückseite soll nach rechts verschoben werden, dies wird notiert mit PstDuplexKorrX: 2
 # aktuelle Einstellung für den rzdrfarbe/160g
+# 
 ---
