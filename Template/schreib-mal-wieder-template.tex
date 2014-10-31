@@ -1,12 +1,15 @@
 \documentclass[fontsize=12pt,DIV10,paper=a4,twoside=false]{scrartcl}
 
 \usepackage{xunicode,listings,leading}
+\usepackage{ifthen}
+
 \usepackage{polyglossia}
 \setdefaultlanguage[spelling=new]{german}
 \setmainlanguage[babelshorthands=false]{german}
 %\usepackage[autostyle,german=guillemets]{csquotes}
 \usepackage[autostyle,german=quotes]{csquotes}
 \MakeOuterQuote{"}
+$if(PstLang)$\setotherlanguage{$PstLang$}$else$$endif$
 
 \usepackage{lscape}
 \usepackage{dashbox}
@@ -25,7 +28,7 @@
 \usepackage{xltxtra}
 \usepackage{ifxetex}
 \usepackage{fixltx2e}
-\usepackage{ifthen}
+
 
 \usepackage{fontspec}
 \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
@@ -109,10 +112,10 @@
 \ifthenelse{\equal{\PstFigur}{lantern}}{
 \StrLeft{\pstDerText}{1900}[\pstDerText]
 \input{Shapes/lantern.shape}
-\newcommand{\pstFormatHoch}{\lanternpar{\fontsize{6}{7}\selectfont\pstDerText}}
-\newcommand{\pstFormatBreit}{\lanternpar{\fontsize{6}{7}\selectfont\pstDerText}}
-\newcommand{\pstFormatHochFarbe}{\lanternpar{\fontsize{6}{7}\selectfont\textcolor{weiss}\pstDerText}}
-\newcommand{\pstFormatBreitFarbe}{\lanternpar{\fontsize{6}{7}\selectfont\textcolor{weiss}\pstDerText}}
+\newcommand{\pstFormatHoch}{\lanternpar{\fontsize{6}{7}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreit}{\lanternpar{\fontsize{6}{7}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\lanternpar{\fontsize{6}{7}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\lanternpar{\fontsize{6}{7}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$happy ...$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$der klassische runde Rübengeist :) $endif$}
 }{}
@@ -121,10 +124,10 @@
 \StrLeft{\pstDerText}{1900}[\pstDerText]
 \input{Shapes/cat.shape}
 \input{Shapes/bat.shape}
-\newcommand{\pstFormatHoch}{\catpar{\fontsize{6}{7}\selectfont\pstDerText}}
-\newcommand{\pstFormatBreit}{\batpar{\fontsize{4}{5}\selectfont\pstDerText}}
-\newcommand{\pstFormatHochFarbe}{\catpar{\fontsize{6}{7}\selectfont\textcolor{weiss}\pstDerText}}
-\newcommand{\pstFormatBreitFarbe}{\batpar{\fontsize{4}{5}\selectfont\textcolor{weiss}\pstDerText}}
+\newcommand{\pstFormatHoch}{\catpar{\fontsize{6}{7}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreit}{\batpar{\fontsize{4}{5}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\catpar{\fontsize{6}{7}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\batpar{\fontsize{4}{5}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$cat$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$and bat$endif$}
 }{}
@@ -133,10 +136,10 @@
 \StrLeft{\pstDerText}{1900}[\pstDerText]
 \input{Shapes/movember.shape}
 \input{Shapes/mov.shape}
-\newcommand{\pstFormatHoch}{\movpar{\fontsize{5}{6}\selectfont\pstDerText}}
-\newcommand{\pstFormatBreit}{\movemberpar{\fontsize{5}{6}\selectfont\pstDerText}}
-\newcommand{\pstFormatHochFarbe}{\movpar{\fontsize{5}{6}\selectfont\textcolor{weiss}\pstDerText}}
-\newcommand{\pstFormatBreitFarbe}{\movemberpar{\fontsize{5}{6}\selectfont\textcolor{weiss}\pstDerText}}
+\newcommand{\pstFormatHoch}{\movpar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreit}{\movemberpar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\movpar{\fontsize{5}{6}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\movemberpar{\fontsize{5}{6}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$Mo Sis \& Mo Bro, Movember is coming!$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$http://movember.com$endif$}
 }{}
@@ -145,10 +148,10 @@
 \StrLeft{\pstDerText}{1900}[\pstDerText]
 \input{Shapes/gliderrund.shape}
 \input{Shapes/glidereckig.shape}
-\newcommand{\pstFormatHoch}{\glidereckigpar{\fontsize{5}{6}\selectfont\pstDerText}}
-\newcommand{\pstFormatBreit}{\gliderrundpar{\fontsize{4}{5}\selectfont\pstDerText}}
-\newcommand{\pstFormatHochFarbe}{\glidereckigpar{\fontsize{5}{6}\selectfont\textcolor{weiss}\pstDerText}}
-\newcommand{\pstFormatBreitFarbe}{\gliderrundpar{\fontsize{4}{5}\selectfont\textcolor{weiss}\pstDerText}}
+\newcommand{\pstFormatHoch}{\glidereckigpar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreit}{\gliderrundpar{\fontsize{4}{5}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\glidereckigpar{\fontsize{5}{6}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\gliderrundpar{\fontsize{4}{5}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$the blue one!!$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$http://....com$endif$}
 }{}
@@ -156,10 +159,10 @@
 \ifthenelse{\equal{\PstFigur}{umbrella}}{
 \StrLeft{\pstDerText}{1900}[\pstDerText]
 \input{Shapes/umbrella.shape}
-\newcommand{\pstFormatHoch}{\umbrellapar{\fontsize{4}{5}\selectfont\pstDerText}}
-\newcommand{\pstFormatBreit}{\umbrellapar{\fontsize{5}{6}\selectfont\pstDerText}}
-\newcommand{\pstFormatHochFarbe}{\umbrellapar{\fontsize{4}{5}\selectfont\textcolor{weiss}\pstDerText}}
-\newcommand{\pstFormatBreitFarbe}{\umbrellapar{\fontsize{5}{6}\selectfont\textcolor{weiss}\pstDerText}}
+\newcommand{\pstFormatHoch}{\umbrellapar{\fontsize{4}{5}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreit}{\umbrellapar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\umbrellapar{\fontsize{4}{5}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\umbrellapar{\fontsize{5}{6}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$Schirm$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$... weil pfuiwetter$endif$}
 }{}
@@ -167,20 +170,20 @@
 \ifthenelse{\equal{\PstFigur}{hand}}{
 \StrLeft{\pstDerText}{1900}[\pstDerText]
 \input{Shapes/zombiehand.shape}
-\newcommand{\pstFormatHoch}{\zombiehandpar{\fontsize{5}{6}\selectfont\pstDerText}}
-\newcommand{\pstFormatBreit}{\zombiehandpar{\fontsize{4}{5}\selectfont\pstDerText}}
-\newcommand{\pstFormatHochFarbe}{\zombiehandpar{\fontsize{5}{6}\selectfont\textcolor{weiss}\pstDerText}}
-\newcommand{\pstFormatBreitFarbe}{\zombiehandpar{\fontsize{4}{5}\selectfont\textcolor{weiss}\pstDerText}}
+\newcommand{\pstFormatHoch}{\zombiehandpar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreit}{\zombiehandpar{\fontsize{4}{5}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\zombiehandpar{\fontsize{5}{6}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\zombiehandpar{\fontsize{4}{5}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$walkers, sleepers, ...$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$$endif$}
 }{}
 
 \ifthenelse{\equal{\PstFigur}{herz}}{
 \StrLeft{\pstDerText}{1900}[\pstDerText]
-\newcommand{\pstFormatHoch}{\heartpar{\fontsize{5}{6}\selectfont\pstDerText}}
-\newcommand{\pstFormatBreit}{\heartpar{\fontsize{4}{5}\selectfont\pstDerText}}
-\newcommand{\pstFormatHochFarbe}{\heartpar{\fontsize{5}{6}\selectfont\textcolor{weiss}\pstDerText}}
-\newcommand{\pstFormatBreitFarbe}{\heartpar{\fontsize{4}{5}\selectfont\textcolor{weiss}\pstDerText}}
+\newcommand{\pstFormatHoch}{\heartpar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreit}{\heartpar{\fontsize{4}{5}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\heartpar{\fontsize{5}{6}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\heartpar{\fontsize{4}{5}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$bis zum Himmel ...$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$und wieder zurück.$endif$}
 }{}
@@ -188,10 +191,10 @@
 \ifthenelse{\equal{\PstFigur}{power}}{
 \StrLeft{\pstDerText}{1900}[\pstDerText]
 \input{Shapes/power.shape}
-\newcommand{\pstFormatHoch}{\powerpar{\fontsize{5}{6}\selectfont\pstDerText}}
-\newcommand{\pstFormatBreit}{\powerpar{\fontsize{4}{5}\selectfont\pstDerText}}
-\newcommand{\pstFormatHochFarbe}{\powerpar{\fontsize{5}{6}\selectfont\textcolor{weiss}\pstDerText}}
-\newcommand{\pstFormatBreitFarbe}{\powerpar{\fontsize{4}{5}\selectfont\textcolor{weiss}\pstDerText}}
+\newcommand{\pstFormatHoch}{\powerpar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreit}{\powerpar{\fontsize{4}{5}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\powerpar{\fontsize{5}{6}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\powerpar{\fontsize{4}{5}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$geek$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$...$endif$}
 }{}
@@ -199,667 +202,40 @@
 \ifthenelse{\equal{\PstFigur}{urkugel}}{
 \StrLeft{\pstDerText}{1900}[\pstDerText]
 \input{Shapes/urkugel.shape}
-\newcommand{\pstFormatHoch}{\urkugelpar{\fontsize{5}{6}\selectfont\pstDerText}}
-\newcommand{\pstFormatBreit}{\urkugelpar{\fontsize{6}{7}\selectfont\pstDerText}}
-\newcommand{\pstFormatHochFarbe}{\urkugelpar{\fontsize{5}{6}\selectfont\textcolor{weiss}\pstDerText}}
-\newcommand{\pstFormatBreitFarbe}{\urkugelpar{\fontsize{6}{7}\selectfont\textcolor{weiss}\pstDerText}}
+\newcommand{\pstFormatHoch}{\urkugelpar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreit}{\urkugelpar{\fontsize{6}{7}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\urkugelpar{\fontsize{5}{6}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\urkugelpar{\fontsize{6}{7}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$ur$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$ur$endif$}
 }{}
 
 \ifthenelse{\equal{\PstFigur}{urlantern}}{
-\StrLeft{\pstDerText}{2000}[\pstDerText]
+\StrLeft{\pstDerText}{1900}[\pstDerText]
 \input{Shapes/urlantern.shape}
-\newcommand{\pstFormatHoch}{\urlanternpar{\fontsize{5}{6}\selectfont\pstDerText}}
-\newcommand{\pstFormatBreit}{\urlanternpar{\fontsize{6}{7}\selectfont\pstDerText}}
-\newcommand{\pstFormatHochFarbe}{\urlanternpar{\fontsize{5}{6}\selectfont\textcolor{weiss}\pstDerText}}
-\newcommand{\pstFormatBreitFarbe}{\urlanternpar{\fontsize{6}{7}\selectfont\textcolor{weiss}\pstDerText}}
+\newcommand{\pstFormatHoch}{\urlanternpar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreit}{\urlanternpar{\fontsize{6}{7}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\urlanternpar{\fontsize{5}{6}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\urlanternpar{\fontsize{6}{7}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$ur$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$creepy$endif$}
 }{}
-%
-%
+
 \title{\pstTitel}
 \author{\pstVonAutor}
-%
-%
-\begin{document}
-%
-%
+
 \definecolor{farbb}{RGB}{139,137,137}
 \definecolor{rott}{HTML}{990000}
 \definecolor{weiss}{HTML}{FFF4BF}
-%
-\begin{comment}
-** ** ** ** ** ** ** ** **
-faltbar transparent lang
-** ** ** ** ** ** ** ** **
-\end{comment}
 
-\clearpage
-\newpage
-\thispagestyle{empty}
-\TPshowboxesfalse
-\TPboxrulesize = 0 mm
-\setlength{\TPHorizModule}{1mm}
-\setlength{\TPVertModule}{\TPHorizModule}
-\begin{textblock}{140}(35,35)
-\adjustbox{cframe=farbb 0.1mm,minipage=[c][14cm][c]{9.5cm},Trim=0 0 0 3.5mm,padding=0,margin=0,angle=90}{
-\begin{center}
-
-\parbox{20mm}{\fontsize{12}{12}\selectfont \centering {\fontspec{\pstFont}}}
-\pstFormatHoch
-\relax
-
-\end{center}
-}
-\end{textblock}
-
-\null
-
-\begin{textblock}{140}(35,130)
-\adjustbox{cframe=farbb 0.1mm,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
-
-\ifdefempty{\pstAnName}{\relax}{\begin{textblock*}{50mm}(112mm,177mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnName}
-\end{textblock*}}
-
-\ifdefempty{\pstAnStrasse}{\relax}{\begin{textblock*}{50mm}(112mm,188mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnStrasse}
-\end{textblock*}}
-
-\ifdefempty{\pstAnOrt}{\relax}{\begin{textblock*}{50mm}(112mm,199mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnOrt}
-\end{textblock*}}
-
-\ifdefempty{\pstAnLand}{\relax}{\begin{textblock*}{50mm}(112mm,210mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnLand}
-\end{textblock*}}
-
-
-\TPshowboxestrue
-\TPboxrulesize = 0.1 mm
-\textblockrulecolour{farbb}
-\begin{textblock*}{15mm}(150mm,140mm) 
-\hfill
-\vspace{18mm}
-\end{textblock*}
-
-\TPshowboxesfalse
-\begin{textblock*}{130mm}(40mm,217mm) 
-\fontsize{6}{6}\selectfont{\pstZusatzA}
-\end{textblock*}
-
-\begin{textblock*}{130mm}(40mm,220mm) 
-\fontsize{6}{6}\selectfont{\pstZusatzB}
-\end{textblock*}
-
-\begin{textblock*}{80mm}(108mm,143mm) 
-\begin{turn}{270}
-{{\color{farbb}\hdashrule{70mm}{0.2mm}{0.8mm}}}
-\end{turn}
-\end{textblock*}
-
-\textblockcolour{}
-
-\hfill
-}
-\end{textblock}
-
-\textblockcolour{white}
-\begin{textblock*}{148mm}(29.7mm,129.5mm)
-\vspace{0.4mm}\color{farbb}\hdashrule{145mm}{0.2mm}{0.8mm}\vspace{0.4mm}
-\end{textblock*}
-
-
-\begin{comment}
-** ** ** ** ** ** ** ** **
-faltbar transparent breit
-** ** ** ** ** ** ** ** **
-\end{comment}
-\clearpage
-\newpage
-\thispagestyle{empty}
-\TPshowboxesfalse
-\begin{textblock}{140}(35,35)
-\adjustbox{cframe=farbb 0.1mm,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
-\begin{center}
-
-\parbox{20mm}{\fontsize{12}{12}\selectfont \centering {\fontspec{\pstFont}}}
-\pstFormatBreit
-\relax
-
-\end{center}
-}
-\end{textblock}
-
-\null
-
-\begin{textblock}{140}(35,130)
-\adjustbox{cframe=farbb 0.1mm,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
-
-
-\ifdefempty{\pstAnName}{\relax}{\begin{textblock*}{50mm}(112mm,177mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnName}
-\end{textblock*}}
-
-\ifdefempty{\pstAnStrasse}{\relax}{\begin{textblock*}{50mm}(112mm,188mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnStrasse}
-\end{textblock*}}
-
-\ifdefempty{\pstAnOrt}{\relax}{\begin{textblock*}{50mm}(112mm,199mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnOrt}
-\end{textblock*}}
-
-\ifdefempty{\pstAnLand}{\relax}{\begin{textblock*}{50mm}(112mm,210mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnLand}
-\end{textblock*}}
-
-\TPshowboxestrue
-\TPboxrulesize = 0.1 mm
-\textblockrulecolour{farbb}
-\begin{textblock*}{15mm}(150mm,140mm) 
-\hfill
-\vspace{18mm}
-\end{textblock*}
-
-\TPshowboxesfalse
-\begin{textblock*}{130mm}(40mm,217mm) 
-\fontsize{6}{6}\selectfont{\pstZusatzA}
-\end{textblock*}
-
-\begin{textblock*}{130mm}(40mm,220mm) 
-\fontsize{6}{6}\selectfont{\pstZusatzB}
-\end{textblock*}
-
-\begin{textblock*}{80mm}(108mm,143mm) 
-\begin{turn}{270}
-{{\color{farbb}\hdashrule{70mm}{0.2mm}{0.8mm}}}
-\end{turn}
-\end{textblock*}
-
-\textblockcolour{}
-
-\hfill
-}
-\end{textblock}
-
-\textblockcolour{white}
-\begin{textblock*}{148mm}(29.7mm,129.5mm)
-\vspace{0.4mm}\color{farbb}\hdashrule{145mm}{0.2mm}{0.8mm}\vspace{0.4mm}
-\end{textblock*}
-
-
-\begin{comment}
-** ** ** ** ** ** ** ** **
-faltbar rot lang
-** ** ** ** ** ** ** ** **
-\end{comment}
-\clearpage
-\newpage
-\thispagestyle{empty}
-\TPshowboxesfalse
-\TPboxrulesize = 0 mm
-\setlength{\TPHorizModule}{1mm}
-\setlength{\TPVertModule}{\TPHorizModule}
-\begin{textblock}{140}(35,35)
-\adjustbox{bgcolor=rott,cframe=rott 0.1mm,minipage=[c][140mm][c]{9.5cm},Trim=0 0 0 3.5mm,padding=0,margin=0,angle=90}{
-\begin{center}
-
-\parbox{20mm}{\fontsize{12}{12}\selectfont \centering \textcolor{weiss}{\fontspec{\pstFont}}}
-\pstFormatHochFarbe
-\relax
-
-
-\end{center}
-}
-\end{textblock}
-
-\null
-
-\begin{textblock}{140}(35,130)
-\adjustbox{cframe=farbb 0.1mm,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
-
-\ifdefempty{\pstAnName}{\relax}{\begin{textblock*}{50mm}(112mm,177mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnName}
-\end{textblock*}}
-
-\ifdefempty{\pstAnStrasse}{\relax}{\begin{textblock*}{50mm}(112mm,188mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnStrasse}
-\end{textblock*}}
-
-\ifdefempty{\pstAnOrt}{\relax}{\begin{textblock*}{50mm}(112mm,199mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnOrt}
-\end{textblock*}}
-
-\ifdefempty{\pstAnLand}{\relax}{\begin{textblock*}{50mm}(112mm,210mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnLand}
-\end{textblock*}}
-
-\TPshowboxestrue
-\TPboxrulesize = 0.1 mm
-\textblockrulecolour{farbb}
-\begin{textblock*}{15mm}(150mm,140mm) 
-\hfill
-\vspace{18mm}
-\end{textblock*}
-
-\TPshowboxesfalse
-\begin{textblock*}{130mm}(40mm,217mm) 
-\fontsize{6}{6}\selectfont{\pstZusatzA}
-\end{textblock*}
-
-\begin{textblock*}{130mm}(40mm,220mm) 
-\fontsize{6}{6}\selectfont{\pstZusatzB}
-\end{textblock*}
-
-\begin{textblock*}{80mm}(108mm,143mm) 
-\begin{turn}{270}
-{{\color{farbb}\hdashrule{70mm}{0.2mm}{0.8mm}}}
-\end{turn}
-\end{textblock*}
-
-\textblockcolour{}
-
-\hfill
-}
-\end{textblock}
-
-
-\begin{comment}
-** ** ** ** ** ** ** ** **
-faltbar rot breit
-** ** ** ** ** ** ** ** **
-\end{comment}
-\clearpage
-\newpage
-\thispagestyle{empty}
-\TPshowboxesfalse
-\TPboxrulesize = 0 mm
-\begin{textblock}{140}(35,35)
-\adjustbox{bgcolor=rott,cframe=rott 0.1mm,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
-\begin{center}
-
-
-\parbox{20mm}{\fontsize{12}{12}\selectfont \centering \textcolor{weiss}{\fontspec{\pstFont}}}
-\pstFormatBreitFarbe
-\relax
-
-\end{center}
-}
-\end{textblock}
-
-\null
-
-\begin{textblock}{140}(35,130)
-\adjustbox{cframe=farbb 0.1mm,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
-
-\ifdefempty{\pstAnName}{\relax}{\begin{textblock*}{50mm}(112mm,177mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnName}
-\end{textblock*}}
-
-\ifdefempty{\pstAnStrasse}{\relax}{\begin{textblock*}{50mm}(112mm,188mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnStrasse}
-\end{textblock*}}
-
-\ifdefempty{\pstAnOrt}{\relax}{\begin{textblock*}{50mm}(112mm,199mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnOrt}
-\end{textblock*}}
-
-\ifdefempty{\pstAnLand}{\relax}{\begin{textblock*}{50mm}(112mm,210mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnLand}
-\end{textblock*}}
-
-\TPshowboxestrue
-\TPboxrulesize = 0.1 mm
-\textblockrulecolour{farbb}
-\begin{textblock*}{15mm}(150mm,140mm) 
-\hfill
-\vspace{18mm}
-\end{textblock*}
-
-\TPshowboxesfalse
-\begin{textblock*}{130mm}(40mm,217mm) 
-\fontsize{6}{6}\selectfont{\pstZusatzA}
-\end{textblock*}
-
-\begin{textblock*}{130mm}(40mm,220mm) 
-\fontsize{6}{6}\selectfont{\pstZusatzB}
-\end{textblock*}
-
-\begin{textblock*}{80mm}(108mm,143mm) 
-\begin{turn}{270}
-{{\color{farbb}\hdashrule{70mm}{0.2mm}{0.8mm}}}
-\end{turn}
-\end{textblock*}
-
-\textblockcolour{}
-
-\hfill
-}
-\end{textblock}
-
-
-\begin{comment}
-** ** ** ** ** ** ** ** **
-Was kann ich damit machen ?
-** ** ** ** ** ** ** ** **
-\end{comment}
-
-
-\clearpage
-\newpage
-\thispagestyle{empty}
-
-\section{Erklärung}
-
-Oben Falten und Kleben, jetzt Duplex-Druck mit Korrektur. Die Seitenskalierung (fit to page) sollte m.E. ausgeschaltet bleiben.
-
-
-
-
-\begin{comment}
-** ** ** ** ** ** ** ** **
-Duplex transparent vorn
-** ** ** ** ** ** ** ** **
-\end{comment}
-\clearpage
-\newpage
-\thispagestyle{empty}
-\TPshowboxesfalse
-\TPboxrulesize = 0 mm
-\setlength{\TPHorizModule}{1mm}
-\setlength{\TPVertModule}{\TPHorizModule}
-\textblockorigin{0mm}{0mm}
-\begin{textblock}{140}(35,35)
-\adjustbox{frame=0.1mm,minipage=[c][14cm][c]{9.5cm},Trim=0 0 0 3.5mm,padding=0,margin=0,angle=90}{
-\begin{center}
-
-\parbox{20mm}{\fontsize{12}{12}\selectfont \centering {\fontspec{\pstFont}}}
-\pstFormatHoch
-\relax
-
-
-
-\end{center}
-}
-\end{textblock}
-
-\null
-
-\begin{textblock}{140}(35,150)
-\adjustbox{frame,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
-\begin{center}
-
-\parbox{20mm}{\fontsize{12}{12}\selectfont \centering {\fontspec{\pstFont}}}
-\pstFormatBreit
-\relax
-
-
-\end{center}
-}
-\end{textblock}
-
-
-\begin{comment}
-** ** ** ** ** ** ** ** **
-Duplex transparent hinten
-** ** ** ** ** ** ** ** **
-\end{comment}
-\clearpage
-\newpage
-\thispagestyle{empty}
-\TPshowboxesfalse
-\TPboxrulesize = 0 mm
-\setlength{\TPHorizModule}{1mm}
-\setlength{\TPVertModule}{\TPHorizModule}
 \textblockorigin{$if(PstDuplexKorrX)$$PstDuplexKorrX$mm$else$0mm$endif$}{$if(PstDuplexKorrY)$$PstDuplexKorrY$mm$else$0mm$endif$}
-\begin{textblock}{140}(35,35)
-\adjustbox{frame=0.1mm,minipage=[c][14cm][c]{9.5cm},Trim=0 0 0 3.5mm,padding=0,margin=0,angle=90}{
 
-\ifdefempty{\pstAnName}{\relax}{\begin{textblock*}{50mm}(112mm,82mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnName}
-\end{textblock*}}
+\newcommand{\pstBlock}{\textblockorigin{$if(PstDuplexKorrX)$$PstDuplexKorrX$mm$else$0mm$endif$}{$if(PstDuplexKorrY)$$PstDuplexKorrY$mm$else$0mm$endif$}}
 
-\ifdefempty{\pstAnStrasse}{\relax}{\begin{textblock*}{50mm}(112mm,93mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnStrasse}
-\end{textblock*}}
+\begin{document}
+$for(include-before)$
+$include-before$
 
-\ifdefempty{\pstAnOrt}{\relax}{\begin{textblock*}{50mm}(112mm,104mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnOrt}
-\end{textblock*}}
-
-\ifdefempty{\pstAnLand}{\relax}{\begin{textblock*}{50mm}(112mm,115mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnLand}
-\end{textblock*}}
-
-\TPshowboxestrue
-\TPboxrulesize = 0.2 mm
-\textblockrulecolour{farbb}
-\begin{textblock*}{15mm}(150mm,45mm) 
-\hfill
-\vspace{18mm}
-\end{textblock*}
-
-\TPshowboxesfalse
-\begin{textblock*}{130mm}(40mm,122mm) 
-\fontsize{6}{6}\selectfont{\pstZusatzA}
-\end{textblock*}
-
-\begin{textblock*}{130mm}(40mm,125mm) 
-\fontsize{6}{6}\selectfont{\pstZusatzB}
-\end{textblock*}
-
-\begin{textblock*}{80mm}(108mm,48mm) 
-\begin{turn}{270}
-{{\color{farbb}\hdashrule{70mm}{0.2mm}{0.8mm}}}
-\end{turn}
-\end{textblock*}
-
-\hfill
-}
-\end{textblock}
-
-\null
-
-\begin{textblock}{140}(35,150)
-\adjustbox{frame,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
-
-
-
-\ifdefempty{\pstAnName}{\relax}{\begin{textblock*}{50mm}(112mm,197mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnName}
-\end{textblock*}}
-
-\ifdefempty{\pstAnStrasse}{\relax}{\begin{textblock*}{50mm}(112mm,208mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnStrasse}
-\end{textblock*}}
-
-\ifdefempty{\pstAnOrt}{\relax}{\begin{textblock*}{50mm}(112mm,219mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnOrt}
-\end{textblock*}}
-
-\ifdefempty{\pstAnLand}{\relax}{\begin{textblock*}{50mm}(112mm,230mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnLand}
-\end{textblock*}}
-
-
-\TPshowboxestrue
-\TPboxrulesize = 0.2 mm
-\textblockrulecolour{farbb}
-\begin{textblock*}{15mm}(150mm,160mm) 
-\hfill
-\vspace{18mm}
-\end{textblock*}
-
-\TPshowboxesfalse
-\begin{textblock*}{130mm}(40mm,237mm) 
-\fontsize{6}{6}\selectfont{\pstZusatzA}
-\end{textblock*}
-
-\begin{textblock*}{130mm}(40mm,240mm) 
-\fontsize{6}{6}\selectfont{\pstZusatzB}
-\end{textblock*}
-
-\begin{textblock*}{80mm}(108mm,163mm) 
-\begin{turn}{270}
-{{\color{farbb}\hdashrule{70mm}{0.2mm}{0.8mm}}}
-\end{turn}
-\end{textblock*}
-
-\hfill
-}
-\end{textblock}
-
-
-
-\begin{comment}
-** ** ** ** ** ** ** ** **
-Duplex rot vorn
-** ** ** ** ** ** ** ** **
-\end{comment}
-\clearpage
-\newpage
-\thispagestyle{empty}
-\TPshowboxesfalse
-\TPboxrulesize = 0 mm
-\setlength{\TPHorizModule}{1mm}
-\setlength{\TPVertModule}{\TPHorizModule}
-\textblockorigin{0mm}{0mm}
-\begin{textblock}{140}(35,35)
-\adjustbox{bgcolor=rott,minipage=[c][14cm][c]{9.5cm},Trim=0 0 0 3.5mm,padding=0,margin=0,angle=90}{
-\begin{center}
-
-\parbox{20mm}{\fontsize{12}{12}\selectfont \centering \textcolor{weiss}{\fontspec{\pstFont}}}
-\pstFormatHochFarbe
-\relax
-
-\end{center}
-}
-\end{textblock}
-
-\null
-
-\begin{textblock}{140}(35,150)
-\adjustbox{bgcolor=rott,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
-\begin{center}
-
-\parbox{20mm}{\fontsize{12}{12}\selectfont \centering \textcolor{weiss}{\fontspec{\pstFont}}}
-\pstFormatBreitFarbe
-\relax
-
-\end{center}
-}
-\end{textblock}
-
-
-\begin{comment}
-** ** ** ** ** ** ** ** **
-Duplex rot hinten
-** ** ** ** ** ** ** ** **
-\end{comment}
-\clearpage
-\newpage
-\thispagestyle{empty}
-\TPshowboxesfalse
-\TPboxrulesize = 0 mm
-\setlength{\TPHorizModule}{1mm}
-\setlength{\TPVertModule}{\TPHorizModule}
-\textblockorigin{$if(PstDuplexKorrX)$$PstDuplexKorrX$mm$else$0mm$endif$}{$if(PstDuplexKorrY)$$PstDuplexKorrY$mm$else$0mm$endif$}
-\begin{textblock}{140}(35,35)
-\adjustbox{frame=0.1mm,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
-
-
-\ifdefempty{\pstAnName}{\relax}{\begin{textblock*}{50mm}(112mm,82mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnName}
-\end{textblock*}}
-
-\ifdefempty{\pstAnStrasse}{\relax}{\begin{textblock*}{50mm}(112mm,93mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnStrasse}
-\end{textblock*}}
-
-\ifdefempty{\pstAnOrt}{\relax}{\begin{textblock*}{50mm}(112mm,104mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnOrt}
-\end{textblock*}}
-
-\ifdefempty{\pstAnLand}{\relax}{\begin{textblock*}{50mm}(112mm,115mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnLand}
-\end{textblock*}}
-
-\TPshowboxestrue
-\TPboxrulesize = 0.2 mm
-\textblockrulecolour{farbb}
-\begin{textblock*}{15mm}(150mm,45mm) 
-\hfill
-\vspace{18mm}
-\end{textblock*}
-
-\TPshowboxesfalse
-\begin{textblock*}{130mm}(40mm,122mm) 
-\fontsize{6}{6}\selectfont{\pstZusatzA}
-\end{textblock*}
-
-\begin{textblock*}{130mm}(40mm,125mm) 
-\fontsize{6}{6}\selectfont{\pstZusatzB}
-\end{textblock*}
-
-\begin{textblock*}{80mm}(108mm,48mm) 
-\begin{turn}{270}
-{{\color{farbb}\hdashrule{70mm}{0.2mm}{0.8mm}}}
-\end{turn}
-\end{textblock*}
-
-\hfill
-}
-\end{textblock}
-
-\null
-
-\begin{textblock}{140}(35,150)
-\adjustbox{frame=0.1mm,minipage=[c][9.5cm][c]{14cm},Trim=3.5mm 0 0 0,padding=0,margin=0}{
-
-\ifdefempty{\pstAnName}{\relax}{\begin{textblock*}{50mm}(112mm,197mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnName}
-\end{textblock*}}
-
-\ifdefempty{\pstAnStrasse}{\relax}{\begin{textblock*}{50mm}(112mm,208mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnStrasse}
-\end{textblock*}}
-
-\ifdefempty{\pstAnOrt}{\relax}{\begin{textblock*}{50mm}(112mm,219mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnOrt}
-\end{textblock*}}
-
-\ifdefempty{\pstAnLand}{\relax}{\begin{textblock*}{50mm}(112mm,230mm) 
-\fontsize{11}{10}\selectfont {\fontspec{\pstBriefFont}\pstAnLand}
-\end{textblock*}}
-
-
-\TPshowboxestrue
-\TPboxrulesize = 0.2 mm
-\textblockrulecolour{farbb}
-\begin{textblock*}{15mm}(150mm,160mm) 
-\hfill
-\vspace{18mm}
-\end{textblock*}
-
-\TPshowboxesfalse
-\begin{textblock*}{130mm}(40mm,237mm) 
-\fontsize{6}{6}\selectfont{\pstZusatzA}
-\end{textblock*}
-
-\begin{textblock*}{130mm}(40mm,240mm) 
-\fontsize{6}{6}\selectfont{\pstZusatzB}
-\end{textblock*}
-
-\begin{textblock*}{80mm}(108mm,163mm) 
-\begin{turn}{270}
-{{\color{farbb}\hdashrule{70mm}{0.2mm}{0.8mm}}}
-\end{turn}
-\end{textblock*}
-
-\hfill
-}
-\end{textblock}
+$endfor$
 
 \end{document}
