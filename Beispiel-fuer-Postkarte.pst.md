@@ -1,18 +1,18 @@
 ---
-PstText: We had fun in those days, carnage and destruction, sacrifice and damnation, ichor and slime and ooze, and foul and nameless games. Food and fun. It was one long party, and everybody loved it except those who found themselves impaled on wooden stakes between a chunk of cheese and pineapple.
-PstLang: english
-PstAnName:
-PstAnStrasse:
-PstAnOrt:
-PstAnLand:
-PstZusatzA: Neil Gaiman http://neilgaiman.com
-PstZusatzB: all hallow's read http://allhallowsread.com
-PstFigur: urlantern
-PstVonAutor:
-PstDuplexKorrX: 2
-PstDuplexKorrY:
-PstTextFarbe: 
-PstHintergrundFarbe: 
+PstText: "We had fun in those days, carnage and destruction, sacrifice and damnation, ichor and slime and ooze, and foul and nameless games. Food and fun. It was one long party, and everybody loved it except those who found themselves impaled on wooden stakes between a chunk of cheese and pineapple."
+PstLang: "english"
+PstAnName: ""
+PstAnStrasse: ""
+PstAnOrt: ""
+PstAnLand: ""
+PstZusatzA: "Neil Gaiman http://neilgaiman.com"
+PstZusatzB: "all hallow's read http://allhallowsread.com"
+PstFigur: "urlantern"
+PstVonAutor: ""
+PstDuplexKorrX: "2"
+PstDuplexKorrY: ""
+PstTextFarbe: ""
+PstHintergrundFarbe: ""
 # 
 # Optionen
 # 
