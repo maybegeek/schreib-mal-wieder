@@ -5,9 +5,9 @@ PstAnName: ""
 PstAnStrasse: ""
 PstAnOrt: ""
 PstAnLand: ""
-PstZusatzA: "Neil Gaiman http://neilgaiman.com"
-PstZusatzB: "all hallow's read http://allhallowsread.com"
-PstFigur: "urlantern"
+PstZusatzA: ""
+PstZusatzB: ""
+PstFigur: "coffee"
 PstVonAutor: ""
 PstDuplexKorrX: "2"
 PstDuplexKorrY: ""
@@ -43,7 +43,7 @@ PstHintergrundFarbe: ""
 # 
 # PstFigur:
 # Die Formen für den Text.
-# {lantern|catandbat|movember|glider|umbrella|hand|herz|power|urkugel|urlantern}
+# {lantern|catandbat|movember|glider|umbrella|hand|herz|power|urkugel|urlantern|coffee}
 # 
 # PstVonAutor:
 # Autor des Briefs. {Vorname Nachname}
