@@ -11,6 +11,8 @@ PstFigur: urlantern
 PstVonAutor:
 PstDuplexKorrX: 2
 PstDuplexKorrY:
+PstTextFarbe: 
+PstHintergrundFarbe: 
 # 
 # Optionen
 # 
@@ -52,6 +54,11 @@ PstDuplexKorrY:
 # Korrektur der Rückseiteninhalte beim Duplexdruck in Millimeter.
 # Der Bezugspunkt (obere linke Ecke) wird damit verschoben.
 # Beispiel: Rückseite soll nach rechts verschoben werden, dies wird notiert mit PstDuplexKorrX: 2
-# aktuelle Einstellung für den rzdrfarbe/160g
+# (aktuelle Einstellung für den rzdrfarbe/160g)
+# 
+# PstTextFarbe:
+# PstHintergrundFarbe:
+# Für den farbigen Teil der Postkarten kann Hintergrund-
+# und Textfarbe geändert werden, als HEX-Wert ohne '#' {FF0000}
 # 
 ---
