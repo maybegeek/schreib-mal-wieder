@@ -79,10 +79,10 @@ $if(PstLang)$\setotherlanguage{$PstLang$}$else$$endif$
 \newcommand{\pstZusatzB}{}
 \newcommand{\pstTitel}{Postkartenspielerei in Wort und Form}
 \newcommand{\pstVonAutor}{$if(PstVonAutor)$$PstVonAutor$$else$maybegeek$endif$}
-\newcommand{\pstAnName}{{\color{farbb}$if(PstAnName)$$PstAnName$$else$\dotfill$endif$}}
-\newcommand{\pstAnStrasse}{{\color{farbb}$if(PstAnStrasse)$$PstAnStrasse$$else$\dotfill$endif$}}
-\newcommand{\pstAnOrt}{{\color{farbb}$if(PstAnOrt)$$PstAnOrt$$else$\dotfill$endif$}}
-\newcommand{\pstAnLand}{{\color{farbb}$if(PstAnLand)$$PstAnLand$$else$\dotfill$endif$}}
+\newcommand{\pstAnName}{{\color{GRAU}$if(PstAnName)$$PstAnName$$else$\dotfill$endif$}}
+\newcommand{\pstAnStrasse}{{\color{GRAU}$if(PstAnStrasse)$$PstAnStrasse$$else$\dotfill$endif$}}
+\newcommand{\pstAnOrt}{{\color{GRAU}$if(PstAnOrt)$$PstAnOrt$$else$\dotfill$endif$}}
+\newcommand{\pstAnLand}{{\color{GRAU}$if(PstAnLand)$$PstAnLand$$else$\dotfill$endif$}}
 \newcommand{\pstText}{$if(PstText)$$PstText$$else$obey!$endif$}
 
 \newcommand{\pstMaxDiv}{}
@@ -104,8 +104,8 @@ $if(PstLang)$\setotherlanguage{$PstLang$}$else$$endif$
 \input{Shapes/lantern.shape}
 \newcommand{\pstFormatHoch}{\lanternpar{\fontsize{6}{7}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \newcommand{\pstFormatBreit}{\lanternpar{\fontsize{6}{7}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatHochFarbe}{\lanternpar{\fontsize{6}{7}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatBreitFarbe}{\lanternpar{\fontsize{6}{7}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\lanternpar{\fontsize{6}{7}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\lanternpar{\fontsize{6}{7}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$happy ...$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$der klassische runde Rübengeist :) $endif$}
 }{}
@@ -116,8 +116,8 @@ $if(PstLang)$\setotherlanguage{$PstLang$}$else$$endif$
 \input{Shapes/bat.shape}
 \newcommand{\pstFormatHoch}{\catpar{\fontsize{6}{7}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \newcommand{\pstFormatBreit}{\batpar{\fontsize{4}{5}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatHochFarbe}{\catpar{\fontsize{6}{7}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatBreitFarbe}{\batpar{\fontsize{4}{5}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\catpar{\fontsize{6}{7}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\batpar{\fontsize{4}{5}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$cat$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$and bat$endif$}
 }{}
@@ -128,8 +128,8 @@ $if(PstLang)$\setotherlanguage{$PstLang$}$else$$endif$
 \input{Shapes/mov.shape}
 \newcommand{\pstFormatHoch}{\movpar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \newcommand{\pstFormatBreit}{\movemberpar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatHochFarbe}{\movpar{\fontsize{5}{6}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatBreitFarbe}{\movemberpar{\fontsize{5}{6}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\movpar{\fontsize{5}{6}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\movemberpar{\fontsize{5}{6}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$Mo Sis \& Mo Bro, Movember is coming!$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$http://movember.com$endif$}
 }{}
@@ -140,8 +140,8 @@ $if(PstLang)$\setotherlanguage{$PstLang$}$else$$endif$
 \input{Shapes/glidereckig.shape}
 \newcommand{\pstFormatHoch}{\glidereckigpar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \newcommand{\pstFormatBreit}{\gliderrundpar{\fontsize{4}{5}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatHochFarbe}{\glidereckigpar{\fontsize{5}{6}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatBreitFarbe}{\gliderrundpar{\fontsize{4}{5}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\glidereckigpar{\fontsize{5}{6}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\gliderrundpar{\fontsize{4}{5}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$the blue one!!$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$http://....com$endif$}
 }{}
@@ -151,8 +151,8 @@ $if(PstLang)$\setotherlanguage{$PstLang$}$else$$endif$
 \input{Shapes/umbrella.shape}
 \newcommand{\pstFormatHoch}{\umbrellapar{\fontsize{4}{5}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \newcommand{\pstFormatBreit}{\umbrellapar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatHochFarbe}{\umbrellapar{\fontsize{4}{5}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatBreitFarbe}{\umbrellapar{\fontsize{5}{6}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\umbrellapar{\fontsize{4}{5}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\umbrellapar{\fontsize{5}{6}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$Schirm$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$... weil pfuiwetter$endif$}
 }{}
@@ -162,8 +162,8 @@ $if(PstLang)$\setotherlanguage{$PstLang$}$else$$endif$
 \input{Shapes/zombiehand.shape}
 \newcommand{\pstFormatHoch}{\zombiehandpar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \newcommand{\pstFormatBreit}{\zombiehandpar{\fontsize{4}{5}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatHochFarbe}{\zombiehandpar{\fontsize{5}{6}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatBreitFarbe}{\zombiehandpar{\fontsize{4}{5}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\zombiehandpar{\fontsize{5}{6}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\zombiehandpar{\fontsize{4}{5}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$walkers, sleepers, ...$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$$endif$}
 }{}
@@ -172,8 +172,8 @@ $if(PstLang)$\setotherlanguage{$PstLang$}$else$$endif$
 \StrLeft{\pstDerText}{1900}[\pstDerText]
 \newcommand{\pstFormatHoch}{\heartpar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \newcommand{\pstFormatBreit}{\heartpar{\fontsize{4}{5}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatHochFarbe}{\heartpar{\fontsize{5}{6}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatBreitFarbe}{\heartpar{\fontsize{4}{5}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\heartpar{\fontsize{5}{6}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\heartpar{\fontsize{4}{5}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$bis zum Himmel ...$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$und wieder zurück.$endif$}
 }{}
@@ -183,8 +183,8 @@ $if(PstLang)$\setotherlanguage{$PstLang$}$else$$endif$
 \input{Shapes/power.shape}
 \newcommand{\pstFormatHoch}{\powerpar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \newcommand{\pstFormatBreit}{\powerpar{\fontsize{4}{5}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatHochFarbe}{\powerpar{\fontsize{5}{6}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatBreitFarbe}{\powerpar{\fontsize{4}{5}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\powerpar{\fontsize{5}{6}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\powerpar{\fontsize{4}{5}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$geek$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$...$endif$}
 }{}
@@ -194,8 +194,8 @@ $if(PstLang)$\setotherlanguage{$PstLang$}$else$$endif$
 \input{Shapes/urkugel.shape}
 \newcommand{\pstFormatHoch}{\urkugelpar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \newcommand{\pstFormatBreit}{\urkugelpar{\fontsize{6}{7}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatHochFarbe}{\urkugelpar{\fontsize{5}{6}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatBreitFarbe}{\urkugelpar{\fontsize{6}{7}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\urkugelpar{\fontsize{5}{6}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\urkugelpar{\fontsize{6}{7}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$ur$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$ur$endif$}
 }{}
@@ -205,8 +205,8 @@ $if(PstLang)$\setotherlanguage{$PstLang$}$else$$endif$
 \input{Shapes/urlantern.shape}
 \newcommand{\pstFormatHoch}{\urlanternpar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \newcommand{\pstFormatBreit}{\urlanternpar{\fontsize{6}{7}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatHochFarbe}{\urlanternpar{\fontsize{5}{6}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatBreitFarbe}{\urlanternpar{\fontsize{6}{7}\selectfont\textcolor{weiss}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\urlanternpar{\fontsize{5}{6}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\urlanternpar{\fontsize{6}{7}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$ur$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$creepy$endif$}
 }{}
@@ -214,9 +214,9 @@ $if(PstLang)$\setotherlanguage{$PstLang$}$else$$endif$
 \title{\pstTitel}
 \author{\pstVonAutor}
 
-\definecolor{farbb}{RGB}{139,137,137}
-\definecolor{rott}{HTML}{990000}
-\definecolor{weiss}{HTML}{FFF4BF}
+\definecolor{GRAU}{RGB}{139,137,137}
+\definecolor{TEXTFARBE}{HTML}{$if(PstTextFarbe)$$PstTextFarbe$$else$FFF4BF$endif$}
+\definecolor{HINTERGRUND}{HTML}{$if(PstHintergrundFarbe)$$PstHintergrundFarbe$$else$990000$endif$}
 
 \newcommand{\pstBlock}{\textblockorigin{$if(PstDuplexKorrX)$$PstDuplexKorrX$mm$else$0mm$endif$}{$if(PstDuplexKorrY)$$PstDuplexKorrY$mm$else$0mm$endif$}}
 
