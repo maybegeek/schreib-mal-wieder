@@ -211,6 +211,28 @@ $if(PstLang)$\setotherlanguage{$PstLang$}$else$$endif$
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$creepy$endif$}
 }{}
 
+\ifthenelse{\equal{\PstFigur}{coffee}}{
+\StrLeft{\pstDerText}{1900}[\pstDerText]
+\input{Shapes/coffee.shape}
+\newcommand{\pstFormatHoch}{\coffeepar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreit}{\coffeepar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\coffeepar{\fontsize{5}{6}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\coffeepar{\fontsize{5}{6}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$... and the smell of the coffee bean$endif$}
+\renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$well, it just won't go away$endif$}
+}{}
+
+\ifthenelse{\equal{\PstFigur}{rosa}}{
+\StrLeft{\pstDerText}{1900}[\pstDerText]
+\input{Shapes/rosa.shape}
+\newcommand{\pstFormatHoch}{\rosapar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreit}{\rosapar{\fontsize{4}{5}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\rosapar{\fontsize{5}{6}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\rosapar{\fontsize{4}{5}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$11.11.$endif$}
+\renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$happy birthday$endif$}
+}{}
+
 \title{\pstTitel}
 \author{\pstVonAutor}
 

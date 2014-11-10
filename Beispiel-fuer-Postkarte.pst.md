@@ -7,7 +7,7 @@ PstAnOrt: ""
 PstAnLand: ""
 PstZusatzA: ""
 PstZusatzB: ""
-PstFigur: "coffee"
+PstFigur: "rosa"
 PstVonAutor: ""
 PstDuplexKorrX: "2"
 PstDuplexKorrY: ""
@@ -43,7 +43,7 @@ PstHintergrundFarbe: ""
 # 
 # PstFigur:
 # Die Formen für den Text.
-# {lantern|catandbat|movember|glider|umbrella|hand|herz|power|urkugel|urlantern|coffee}
+# {lantern|catandbat|movember|glider|umbrella|hand|herz|power|urkugel|urlantern|coffee|rosa}
 # 
 # PstVonAutor:
 # Autor des Briefs. {Vorname Nachname}

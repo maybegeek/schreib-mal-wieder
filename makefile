@@ -19,6 +19,8 @@ POSTKARTE_HERZ     := $(patsubst %.pst.md,$(O_DIR)/%.herz.pdf,$(URMD))
 POSTKARTE_POWR     := $(patsubst %.pst.md,$(O_DIR)/%.power.pdf,$(URMD))
 POSTKARTE_URKU     := $(patsubst %.pst.md,$(O_DIR)/%.urkugel.pdf,$(URMD))
 POSTKARTE_URLA     := $(patsubst %.pst.md,$(O_DIR)/%.urlantern.pdf,$(URMD))
+POSTKARTE_COFF     := $(patsubst %.pst.md,$(O_DIR)/%.coffee.pdf,$(URMD))
+POSTKARTE_ROSA     := $(patsubst %.pst.md,$(O_DIR)/%.rosa.pdf,$(URMD))
 POSTKARTE_LANT_D   := $(patsubst %.pst.md,$(O_DIR)/%.lantern.duplex.pdf,$(URMD))
 POSTKARTE_CATN_D   := $(patsubst %.pst.md,$(O_DIR)/%.cat-n-bat.duplex.pdf,$(URMD))
 POSTKARTE_MOVM_D   := $(patsubst %.pst.md,$(O_DIR)/%.movember.duplex.pdf,$(URMD))
@@ -29,6 +31,8 @@ POSTKARTE_HERZ_D   := $(patsubst %.pst.md,$(O_DIR)/%.herz.duplex.pdf,$(URMD))
 POSTKARTE_POWR_D   := $(patsubst %.pst.md,$(O_DIR)/%.power.duplex.pdf,$(URMD))
 POSTKARTE_URKU_D   := $(patsubst %.pst.md,$(O_DIR)/%.urkugel.duplex.pdf,$(URMD))
 POSTKARTE_URLA_D   := $(patsubst %.pst.md,$(O_DIR)/%.urlantern.duplex.pdf,$(URMD))
+POSTKARTE_COFF_D   := $(patsubst %.pst.md,$(O_DIR)/%.coffee.duplex.pdf,$(URMD))
+POSTKARTE_ROSA_D   := $(patsubst %.pst.md,$(O_DIR)/%.rosa.duplex.pdf,$(URMD))
 
 all : $(POSTKARTE) $(POSTKARTE_D)
 
@@ -43,6 +47,8 @@ postkarten-alle : \
 	$(POSTKARTE_POWR) \
 	$(POSTKARTE_URKU) \
 	$(POSTKARTE_URLA) \
+	$(POSTKARTE_COFF) \
+	$(POSTKARTE_ROSA) \
 	$(POSTKARTE_LANT_D) \
 	$(POSTKARTE_CATN_D) \
 	$(POSTKARTE_MOVM_D) \
@@ -52,7 +58,9 @@ postkarten-alle : \
 	$(POSTKARTE_HERZ_D) \
 	$(POSTKARTE_POWR_D) \
 	$(POSTKARTE_URKU_D) \
-	$(POSTKARTE_URLA_D)
+	$(POSTKARTE_URLA_D) \
+	$(POSTKARTE_COFF_D) \
+	$(POSTKARTE_ROSA_D)
 	
   
 ## POSTKARTE
@@ -185,6 +193,30 @@ $(O_DIR)/%.urlantern.duplex.pdf: %.pst.md
 	-VPstFigur=urlantern \
 	$< -o $@
 
+## POSTKARTE_COFF
+$(O_DIR)/%.coffee.pdf: %.pst.md
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_NORMAL) \
+	-VPstFigur=coffee \
+	$< -o $@
+
+## POSTKARTE_COFF_D
+$(O_DIR)/%.coffee.duplex.pdf: %.pst.md
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_DUPLEX) \
+	-VPstFigur=coffee \
+	$< -o $@
+
+## POSTKARTE_ROSA
+$(O_DIR)/%.rosa.pdf: %.pst.md
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_NORMAL) \
+	-VPstFigur=rosa \
+	$< -o $@
+
+## POSTKARTE_ROSA_D
+$(O_DIR)/%.rosa.duplex.pdf: %.pst.md
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_DUPLEX) \
+	-VPstFigur=rosa \
+	$< -o $@
+
 clean : ;
 	@-rm \
 	$(POSTKARTE) \
@@ -204,6 +236,8 @@ clean-all : ;
 	$(POSTKARTE_POWR) \
 	$(POSTKARTE_URKU) \
 	$(POSTKARTE_URLA) \
+	$(POSTKARTE_COFF) \
+	$(POSTKARTE_ROSA) \
 	$(POSTKARTE_LANT_D) \
 	$(POSTKARTE_CATN_D) \
 	$(POSTKARTE_MOVM_D) \
@@ -213,6 +247,8 @@ clean-all : ;
 	$(POSTKARTE_HERZ_D) \
 	$(POSTKARTE_POWR_D) \
 	$(POSTKARTE_URKU_D) \
-	$(POSTKARTE_URLA_D)
+	$(POSTKARTE_URLA_D) \
+	$(POSTKARTE_COFF_D) \
+	$(POSTKARTE_ROSA_D)
 
 rebuild-all : clean-all all
