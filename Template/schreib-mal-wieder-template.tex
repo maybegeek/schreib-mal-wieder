@@ -247,11 +247,12 @@ $if(PstLang)$\setotherlanguage{$PstLang$}$else$$endif$
 \ifthenelse{\equal{\PstFigur}{xmasnumbers}}{
 \StrLeft{\pstDerText}{1900}[\pstDerText]
 \input{Shapes/dezimalxmas.shape}
+\input{Shapes/binaryxmas.shape}
 \newcommand{\pstFormatHoch}{\dezimalxmaspar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatBreit}{\dezimalxmaspar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreit}{\binaryxmaspar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
 \newcommand{\pstFormatHochFarbe}{\dezimalxmaspar{\fontsize{5}{6}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\newcommand{\pstFormatBreitFarbe}{\dezimalxmaspar{\fontsize{5}{6}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
-\renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$Frohe Weihnachten$endif$}
+\newcommand{\pstFormatBreitFarbe}{\binaryxmaspar{\fontsize{5}{6}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$adventus domini$endif$}
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$$endif$}
 }{}
 
