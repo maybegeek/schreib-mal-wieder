@@ -21,6 +21,8 @@ POSTKARTE_URKU     := $(patsubst %.pst.md,$(O_DIR)/%.urkugel.pdf,$(URMD))
 POSTKARTE_URLA     := $(patsubst %.pst.md,$(O_DIR)/%.urlantern.pdf,$(URMD))
 POSTKARTE_COFF     := $(patsubst %.pst.md,$(O_DIR)/%.coffee.pdf,$(URMD))
 POSTKARTE_ROSA     := $(patsubst %.pst.md,$(O_DIR)/%.rosa.pdf,$(URMD))
+POSTKARTE_BAUM     := $(patsubst %.pst.md,$(O_DIR)/%.baum.pdf,$(URMD))
+POSTKARTE_XMASN    := $(patsubst %.pst.md,$(O_DIR)/%.xmasnumbers.pdf,$(URMD))
 POSTKARTE_LANT_D   := $(patsubst %.pst.md,$(O_DIR)/%.lantern.duplex.pdf,$(URMD))
 POSTKARTE_CATN_D   := $(patsubst %.pst.md,$(O_DIR)/%.cat-n-bat.duplex.pdf,$(URMD))
 POSTKARTE_MOVM_D   := $(patsubst %.pst.md,$(O_DIR)/%.movember.duplex.pdf,$(URMD))
@@ -33,6 +35,7 @@ POSTKARTE_URKU_D   := $(patsubst %.pst.md,$(O_DIR)/%.urkugel.duplex.pdf,$(URMD))
 POSTKARTE_URLA_D   := $(patsubst %.pst.md,$(O_DIR)/%.urlantern.duplex.pdf,$(URMD))
 POSTKARTE_COFF_D   := $(patsubst %.pst.md,$(O_DIR)/%.coffee.duplex.pdf,$(URMD))
 POSTKARTE_ROSA_D   := $(patsubst %.pst.md,$(O_DIR)/%.rosa.duplex.pdf,$(URMD))
+POSTKARTE_XMASN_D  := $(patsubst %.pst.md,$(O_DIR)/%.xmasnumbers.duplex.pdf,$(URMD))
 
 all : $(POSTKARTE) $(POSTKARTE_D)
 
@@ -49,6 +52,8 @@ postkarten-alle : \
 	$(POSTKARTE_URLA) \
 	$(POSTKARTE_COFF) \
 	$(POSTKARTE_ROSA) \
+	$(POSTKARTE_BAUM) \
+	$(POSTKARTE_XMASN) \
 	$(POSTKARTE_LANT_D) \
 	$(POSTKARTE_CATN_D) \
 	$(POSTKARTE_MOVM_D) \
@@ -60,7 +65,9 @@ postkarten-alle : \
 	$(POSTKARTE_URKU_D) \
 	$(POSTKARTE_URLA_D) \
 	$(POSTKARTE_COFF_D) \
-	$(POSTKARTE_ROSA_D)
+	$(POSTKARTE_ROSA_D) \
+	$(POSTKARTE_BAUM_D) \
+	$(POSTKARTE_XMASN_D)
 	
   
 ## POSTKARTE
@@ -217,6 +224,31 @@ $(O_DIR)/%.rosa.duplex.pdf: %.pst.md
 	-VPstFigur=rosa \
 	$< -o $@
 
+
+## POSTKARTE_BAUM
+$(O_DIR)/%.baum.pdf: %.pst.md
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_NORMAL) \
+	-VPstFigur=baum \
+	$< -o $@
+
+## POSTKARTE_BAUM_D
+$(O_DIR)/%.baum.duplex.pdf: %.pst.md
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_DUPLEX) \
+	-VPstFigur=baum \
+	$< -o $@
+
+## POSTKARTE_XMASN
+$(O_DIR)/%.xmasnumbers.pdf: %.pst.md
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_NORMAL) \
+	-VPstFigur=xmasnumbers \
+	$< -o $@
+
+## POSTKARTE_XMASN_D
+$(O_DIR)/%.xmasnumbers.duplex.pdf: %.pst.md
+	@pandoc $(PST_OPT) --template=$(PST_TMPL) -B$(PST_DUPLEX) \
+	-VPstFigur=xmasnumbers \
+	$< -o $@
+
 clean : ;
 	@-rm \
 	$(POSTKARTE) \
@@ -238,6 +270,8 @@ clean-all : ;
 	$(POSTKARTE_URLA) \
 	$(POSTKARTE_COFF) \
 	$(POSTKARTE_ROSA) \
+	$(POSTKARTE_BAUM) \
+	$(POSTKARTE_XMASN) \
 	$(POSTKARTE_LANT_D) \
 	$(POSTKARTE_CATN_D) \
 	$(POSTKARTE_MOVM_D) \
@@ -249,6 +283,8 @@ clean-all : ;
 	$(POSTKARTE_URKU_D) \
 	$(POSTKARTE_URLA_D) \
 	$(POSTKARTE_COFF_D) \
-	$(POSTKARTE_ROSA_D)
+	$(POSTKARTE_ROSA_D) \
+	$(POSTKARTE_BAUM_D) \
+	$(POSTKARTE_XMASN_D)
 
 rebuild-all : clean-all all

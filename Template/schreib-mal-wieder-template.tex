@@ -233,6 +233,28 @@ $if(PstLang)$\setotherlanguage{$PstLang$}$else$$endif$
 \renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$happy birthday$endif$}
 }{}
 
+\ifthenelse{\equal{\PstFigur}{baum}}{
+\StrLeft{\pstDerText}{1900}[\pstDerText]
+\input{Shapes/baum.shape}
+\newcommand{\pstFormatHoch}{\baumpar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreit}{\baumpar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\baumpar{\fontsize{5}{6}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\baumpar{\fontsize{5}{6}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$Frohe Weihnachten$endif$}
+\renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$$endif$}
+}{}
+
+\ifthenelse{\equal{\PstFigur}{xmasnumbers}}{
+\StrLeft{\pstDerText}{1900}[\pstDerText]
+\input{Shapes/dezimalxmas.shape}
+\newcommand{\pstFormatHoch}{\dezimalxmaspar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreit}{\dezimalxmaspar{\fontsize{5}{6}\selectfont$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatHochFarbe}{\dezimalxmaspar{\fontsize{5}{6}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\newcommand{\pstFormatBreitFarbe}{\dezimalxmaspar{\fontsize{5}{6}\selectfont\textcolor{TEXTFARBE}$if(PstLang)${\text$PstLang${\pstDerText}}$else$\pstDerText$endif$}}
+\renewcommand{\pstZusatzA}{$if(PstZusatzA)$$PstZusatzA$$else$Frohe Weihnachten$endif$}
+\renewcommand{\pstZusatzB}{$if(PstZusatzB)$$PstZusatzB$$else$$endif$}
+}{}
+
 \title{\pstTitel}
 \author{\pstVonAutor}
 
